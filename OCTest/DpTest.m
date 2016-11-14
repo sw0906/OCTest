@@ -138,7 +138,7 @@
 -(BOOL)wordBreak:(NSString *)s  withDict:(NSSet *)dict
 {
     NSInteger maxL = [self getMaxLength:dict];
-    NSInteger size = [dict count];
+    NSInteger size = [s length];//[dict count];
     
     BOOL cut[size+1];
     cut[0] = true;
@@ -149,7 +149,7 @@
             if (!cut[j])
                 continue;
             
-            NSRange range = NSMakeRange(j, i-j+1);//i-j
+            NSRange range = NSMakeRange(i-j,j);//i-j
             NSString *subStr = [s substringWithRange:range];
             if([dict containsObject:subStr])
             {
