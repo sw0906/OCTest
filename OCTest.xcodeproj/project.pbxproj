@@ -16,6 +16,12 @@
 		8413C0B41DD1BF1400CA2DC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8413C0B21DD1BF1400CA2DC7 /* LaunchScreen.storyboard */; };
 		8413C0BF1DD1BF1400CA2DC7 /* OCTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8413C0BE1DD1BF1400CA2DC7 /* OCTestTests.m */; };
 		8413C0CA1DD1BF1400CA2DC7 /* OCTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8413C0C91DD1BF1400CA2DC7 /* OCTestUITests.m */; };
+		8413C0D91DD1D23800CA2DC7 /* OCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8413C0D81DD1D23800CA2DC7 /* OCNode.m */; };
+		8413C0DA1DD1D23800CA2DC7 /* OCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8413C0D81DD1D23800CA2DC7 /* OCNode.m */; };
+		8413C0DB1DD1D23800CA2DC7 /* OCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8413C0D81DD1D23800CA2DC7 /* OCNode.m */; };
+		842A7B081DD992B500A1729C /* DpTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A7B071DD992B500A1729C /* DpTest.m */; };
+		842A7B091DD992B500A1729C /* DpTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A7B071DD992B500A1729C /* DpTest.m */; };
+		842A7B0A1DD992B500A1729C /* DpTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A7B071DD992B500A1729C /* DpTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,10 @@
 		8413C0C51DD1BF1400CA2DC7 /* OCTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8413C0C91DD1BF1400CA2DC7 /* OCTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTestUITests.m; sourceTree = "<group>"; };
 		8413C0CB1DD1BF1400CA2DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8413C0D71DD1D23800CA2DC7 /* OCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCNode.h; sourceTree = "<group>"; };
+		8413C0D81DD1D23800CA2DC7 /* OCNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCNode.m; sourceTree = "<group>"; };
+		842A7B061DD992B500A1729C /* DpTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DpTest.h; sourceTree = "<group>"; };
+		842A7B071DD992B500A1729C /* DpTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DpTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +123,10 @@
 				8413C0B51DD1BF1400CA2DC7 /* Info.plist */,
 				8413C0AD1DD1BF1400CA2DC7 /* OCTest.xcdatamodeld */,
 				8413C0A11DD1BF1400CA2DC7 /* Supporting Files */,
+				8413C0D71DD1D23800CA2DC7 /* OCNode.h */,
+				8413C0D81DD1D23800CA2DC7 /* OCNode.m */,
+				842A7B061DD992B500A1729C /* DpTest.h */,
+				842A7B071DD992B500A1729C /* DpTest.m */,
 			);
 			path = OCTest;
 			sourceTree = "<group>";
@@ -274,9 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8413C0A91DD1BF1400CA2DC7 /* ViewController.m in Sources */,
+				842A7B081DD992B500A1729C /* DpTest.m in Sources */,
 				8413C0AF1DD1BF1400CA2DC7 /* OCTest.xcdatamodeld in Sources */,
 				8413C0A61DD1BF1400CA2DC7 /* AppDelegate.m in Sources */,
 				8413C0A31DD1BF1400CA2DC7 /* main.m in Sources */,
+				8413C0D91DD1D23800CA2DC7 /* OCNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8413C0BF1DD1BF1400CA2DC7 /* OCTestTests.m in Sources */,
+				842A7B091DD992B500A1729C /* DpTest.m in Sources */,
+				8413C0DA1DD1D23800CA2DC7 /* OCNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +311,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8413C0CA1DD1BF1400CA2DC7 /* OCTestUITests.m in Sources */,
+				842A7B0A1DD992B500A1729C /* DpTest.m in Sources */,
+				8413C0DB1DD1D23800CA2DC7 /* OCNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +522,7 @@
 				8413C0D01DD1BF1400CA2DC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8413C0D11DD1BF1400CA2DC7 /* Build configuration list for PBXNativeTarget "OCTestTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +531,7 @@
 				8413C0D31DD1BF1400CA2DC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8413C0D41DD1BF1400CA2DC7 /* Build configuration list for PBXNativeTarget "OCTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +540,7 @@
 				8413C0D61DD1BF1400CA2DC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
