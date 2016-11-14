@@ -10,4 +10,6 @@
 
 @interface DpTest : NSObject
 - (void)testJump2;
+-(void)testLong;
+- (void)testWordBreak;
 @end

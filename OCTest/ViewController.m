@@ -142,7 +142,7 @@ NSInteger intSort(id num1, id num2, void *context)
 -(void)testDp
 {
     DpTest *test = [[DpTest alloc] init];
-    [test testJump2];
+    [test testWordBreak];
 }
 
 
