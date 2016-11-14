@@ -75,49 +75,6 @@
     return [maxV integerValue];
 }
 
-//word break - possibility
-//int getMaxLength(unordered_set<string> &dict) {
-//    int maxLength = 0; // 试试看中文
-//    for (auto it = dict.begin(); it != dict.end(); ++it) {
-//        int curLength = (*it).length();
-//        maxLength = max( maxLength, curLength);
-//    }
-//    return maxLength;
-//}
-//
-////dp 核心就是根据之前的状态做判断
-//bool wordBreak(string s, unordered_set<string> &dict) {
-//    //helper - 缩短循环次数
-//    int maxLength = getMaxLength(dict);
-//    
-//    //state
-//    int length = s.length() + 1;//因为涉及往回走，所以要加1, eg. s.substr(i - j, j);//(4-1, 1)
-//    bool canSegment[length];
-//    
-//    //init
-//    canSegment[0] = true;
-//    
-//    //func
-//    for (int i = 1; i <= s.length(); i++)
-//    {
-//        canSegment[i] = false;
-//        for (int j = 1; j <= maxLength && j <= i; j++) //从当前的 前一个位置 往前走，走回0 或  最长的一个string
-//        {
-//            if (!canSegment[i - j])
-//            {
-//                continue;
-//            }
-//            string word = s.substr(i - j, j);//(4-1, 1)
-//            if (dict.find(word) != dict.end()) {
-//                canSegment[i] = true;
-//                break;
-//            }
-//        }
-//    }
-//    
-//    return canSegment[s.length()];
-//}
-//bool wordBreak(string s, unordered_set<string> &dict) {
 
 - (void)testWordBreak
 {
@@ -140,13 +97,18 @@
     NSInteger maxL = [self getMaxLength:dict];
     NSInteger size = [s length];//[dict count];
     
+    //init
     BOOL cut[size+1];
     cut[0] = true;
+    for (int i=1; i<=size; i++) {
+        cut[i] = false;
+    }
     
+    //dp
     for (int i=1; i<=size; i++)// <=
     {
         for (int j = 1; j<=maxL && j<=i; j++) {
-            if (!cut[j])
+            if (!cut[i-j])
                 continue;
             
             NSRange range = NSMakeRange(i-j,j);//i-j
@@ -159,10 +121,10 @@
         }
     }
     
-    for (int i=0; i<=size; i++) {
-        NSString *s = cut[i] ? @"true" : @"false";
-        NSLog(@"%@" , s);
-    }
+//    for (int i=0; i<=size; i++) {
+//        NSString *s = cut[i] ? @"true" : @"false";
+//        NSLog(@"%@" , s);
+//    }
     return cut[size];
 }
 
