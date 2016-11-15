@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface DpTest : NSObject
+
+-(void)testMinCut;
+-(void)testEdit;
 - (void)testJump2;
 -(void)testLong;
 - (void)testWordBreak;
+
 @end

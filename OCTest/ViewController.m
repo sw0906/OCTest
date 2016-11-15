@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "OCNode.h"
-#import "DpTest.h";
+#import "DpTest.h"
 
 
 @interface ViewController ()
@@ -37,7 +37,7 @@
 -(void)testDp
 {
     DpTest *test = [[DpTest alloc] init];
-    [test testWordBreak];
+    [test testMinCut];
 }
 
 
