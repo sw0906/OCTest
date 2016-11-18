@@ -18,6 +18,8 @@
 
 -(void)testSort;
 
+- (void)testFilter;
+
 -(void)testMap;
 
 @end

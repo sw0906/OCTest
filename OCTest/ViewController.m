@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "OCNode.h"
 #import "DpTest.h"
+#import "CommonTest.h"
 
 
 @interface ViewController ()
@@ -21,6 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [self testCommon];
     [self testDp];
 }
 
@@ -33,6 +35,13 @@
 
 
 #pragma mark - dp
+
+-(void)testCommon
+{
+    CommonTest *ct = [[CommonTest alloc] init];
+    [ct testFilter];
+}
+
 //#import "DpTest.h"
 -(void)testDp
 {

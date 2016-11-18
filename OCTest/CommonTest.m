@@ -32,17 +32,35 @@ NSInteger intSort(id num1, id num2, void *context)
         return NSOrderedSame;
 }
 
--(void)testArray{
-    
+
+- (void)testFilter
+{
+    NSString *firstName = @"Trevor";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstName == %@", firstName];
+    NSArray *a = @[@2,@4,@5];
+    NSPredicate *p2 = [NSPredicate predicateWithFormat:@"SELF > 3"];
+    NSArray *array = [a filteredArrayUsingPredicate:p2];
+    NSLog(@"%ld", [array count]);
+}
+
+
+- (void)testSet
+{
     NSRange range = NSMakeRange(1, 1);
     NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
     NSMutableIndexSet *mi_set = [[NSMutableIndexSet alloc] initWithIndexSet:set];
     [mi_set addIndex:2];
     
-    
-    
     NSArray *array1 = @[@"good", @"Hello, World!", @42, @43];
     [array1 objectsAtIndexes:set];
+    
+    NSMutableSet *mSet = [[NSMutableSet alloc] init];
+    [mSet addObject:@1];
+    [mSet containsObject:@1];
+
+}
+
+-(void)testArray{
     
     NSMutableArray *m_array = [NSMutableArray arrayWithObjects:@"good", @"Hello, World!", @42, @43, nil];
     [m_array addObject:@"Tutorials11"];

@@ -26,6 +26,7 @@
 		D05803161DD9FF1F00FA5F7F /* TreeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D05803151DD9FF1F00FA5F7F /* TreeTest.m */; };
 		D058031A1DDA00BB00FA5F7F /* CommonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D05803191DDA00BB00FA5F7F /* CommonTest.m */; };
 		D058031D1DDA01A600FA5F7F /* LinkTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D058031C1DDA01A600FA5F7F /* LinkTest.m */; };
+		D05803211DDD5F0000FA5F7F /* ViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D05803201DDD5F0000FA5F7F /* ViewTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		D05803191DDA00BB00FA5F7F /* CommonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTest.m; sourceTree = "<group>"; };
 		D058031B1DDA01A600FA5F7F /* LinkTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkTest.h; sourceTree = "<group>"; };
 		D058031C1DDA01A600FA5F7F /* LinkTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkTest.m; sourceTree = "<group>"; };
+		D058031F1DDD5F0000FA5F7F /* ViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTest.h; sourceTree = "<group>"; };
+		D05803201DDD5F0000FA5F7F /* ViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,8 @@
 				D058031C1DDA01A600FA5F7F /* LinkTest.m */,
 				D05803181DDA00BB00FA5F7F /* CommonTest.h */,
 				D05803191DDA00BB00FA5F7F /* CommonTest.m */,
+				D058031F1DDD5F0000FA5F7F /* ViewTest.h */,
+				D05803201DDD5F0000FA5F7F /* ViewTest.m */,
 			);
 			name = Algorithm;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				8413C0AF1DD1BF1400CA2DC7 /* OCTest.xcdatamodeld in Sources */,
 				8413C0A61DD1BF1400CA2DC7 /* AppDelegate.m in Sources */,
 				D05803161DD9FF1F00FA5F7F /* TreeTest.m in Sources */,
+				D05803211DDD5F0000FA5F7F /* ViewTest.m in Sources */,
 				D058031A1DDA00BB00FA5F7F /* CommonTest.m in Sources */,
 				8413C0A31DD1BF1400CA2DC7 /* main.m in Sources */,
 				8413C0D91DD1D23800CA2DC7 /* OCNode.m in Sources */,
