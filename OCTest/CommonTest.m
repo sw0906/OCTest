@@ -7,6 +7,9 @@
 //
 
 #import "CommonTest.h"
+@interface BoolNumber : NSObject
+@property (readwrite) BOOL boolValue;
+@end
 
 @implementation CommonTest
 
@@ -136,4 +139,39 @@ NSInteger intSort(id num1, id num2, void *context)
     NSLog(@"%@", m_dic.description);
 }
 
+
+
+
+//We can return it from our cancellable_dispatch_after method like so:
+
+
+
+
+
+
+//So anybody calling this API will have a BoolNumber object which can cancel the block from running anytime during the "when" waiting period
+
+
+
+
+//+ (id)singleton {
+//    static id sharedMyManager = nil;
+//    @synchronized([MyObject class]){
+//        if (sharedMyManager == nil) {
+//            sharedMyManager = [[self alloc] init];
+//        }
+//    }
+//    return sharedMyManager;
+//}
+//@end
+//
+////using block
+//+ (id) singleton {
+//    static SomeManager *sharedMyManager = nil;
+//    static dispatch_once_t  onceToken;
+//    dispatch_once(&onceToken, ^{
+//        sharedMyManager = [[self alloc] init];
+//    });
+//    return sharedMyManager;
+//}
 @end

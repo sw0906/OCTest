@@ -10,6 +10,7 @@
 #import "OCNode.h"
 #import "DpTest.h"
 #import "CommonTest.h"
+#import "CancellationToken.h"
 
 
 @interface ViewController ()
@@ -48,6 +49,17 @@
     DpTest *test = [[DpTest alloc] init];
     [test testMinCut];
 }
+
+
+- (void) testDispatch
+{
+    CancellationToken *token = cancellable_dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 15*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        NSLog(@"Here");
+    });
+    
+    [token cancel];
+}
+
 
 
 @end
