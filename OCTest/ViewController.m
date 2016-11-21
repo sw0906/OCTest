@@ -70,6 +70,37 @@
 }
 
 
+//- (void)testDispatch3
+//{
+//    __weak NSNumber *number = [NSNumber numberWithBool:YES];
+//    cancellable_dispatch_after3(dispatch_time(DISPATCH_TIME_NOW, 2*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//        NSLog(@"Here");
+//    }, number);
+//    number = [NSNumber numberWithBool:NO];
+//}
+//
+//- (void)testDispatch
+//{
+////    __block NSNumber *number = [NSNumber numberWithBool:NO];
+//    __block int number = 1;
+//    [self cancellable_dispatch_after4:dispatch_time(DISPATCH_TIME_NOW,  2 * NSEC_PER_SEC) withQueue:dispatch_get_main_queue() withBlock:^{
+//        NSLog(@"pass");
+//    } withFlag:number];
+//    number = 0;
+////    number = [NSNumber numberWithBool:YES];
+//}
+//
+//
+//- (void) cancellable_dispatch_after4:(dispatch_time_t)t withQueue:(dispatch_queue_t)q withBlock:(dispatch_block_t)b withFlag:( int )number
+//{
+//    dispatch_block_t newBlock = ^{
+//        if ( number != 0)
+//            b();
+//    };
+//    dispatch_after(t, q, newBlock);
+//}
+
+
 - (CancellationToken *) cancellable_dispatch_after2:(dispatch_time_t)t withQueue:(dispatch_queue_t)q withBlock:(dispatch_block_t)b
 {
     CancellationToken *cancelState = [[CancellationToken alloc] init];
