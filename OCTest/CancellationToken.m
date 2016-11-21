@@ -8,9 +8,6 @@
 
 #import "CancellationToken.h"
 
-@interface CancellationToken ()
-
-@end
 
 @implementation CancellationToken
 
@@ -25,5 +22,4 @@
 
 
 @end
-
 

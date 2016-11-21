@@ -11,17 +11,36 @@
 @interface CancellationToken : NSObject
 @property BOOL cancelled;
 -(void)cancel;
+
 @end
 
-NS_INLINE CancellationToken *cancellable_dispatch_after(dispatch_time_t time, dispatch_queue_t queue, dispatch_block_t block) {
+
+
+
+
+
+
+
+
+NS_INLINE CancellationToken *cancellable_dispatch_after(dispatch_time_t time,
+                                                        dispatch_queue_t queue,
+                                                        dispatch_block_t block)
+{
     __block CancellationToken *token = [CancellationToken new];
-    dispatch_block_t wrapper = ^{
+    
+//    dispatch_block_t wrapper = ^{
+//        if (!token.cancelled) {
+//            block();
+//        }
+//    };
+    
+//    dispatch_after(time, queue, wrapper);
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (!token.cancelled) {
             block();
         }
-    };
-    
-    dispatch_after(time, queue, wrapper);
+    });
     return token;
 }
 
