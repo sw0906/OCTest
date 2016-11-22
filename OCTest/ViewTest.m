@@ -21,9 +21,11 @@
     
     UIView *a = [UIView new];
     UIView *b = [UIView new];
+    UIView *c = [UIView new];
     [a addSubview:b];
+    [b addSubview:c];
     [self addSubview:a];
-    [self commonSuperView:b];
+    [self commonSuperView:c];
 }
 
 -(UIView *)commonSuperView:(UIView *)a
