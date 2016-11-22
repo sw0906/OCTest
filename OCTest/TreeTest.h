@@ -11,5 +11,6 @@
 
 
 @interface TreeTest : NSObject
-
+- (void)testBTree;
+- (void)testLCA;
 @end

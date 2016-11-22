@@ -10,4 +10,9 @@
 
 @interface ViewTest : UIView
 
+@property (nonatomic, strong) UIView *sub;
+
+
+-(void)testCommonView;
+
 @end
