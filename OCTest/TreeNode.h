@@ -17,7 +17,7 @@
 @end
 
 
-@interface TreeNode : NSObject
+@interface TreeNode : NSObject<NSCopying>
 @property (nonatomic) NSInteger val;
 @property (nonatomic, strong) TreeNode *left;
 @property (nonatomic, strong) TreeNode *right;

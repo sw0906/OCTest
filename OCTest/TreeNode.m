@@ -31,6 +31,23 @@
 
 @implementation TreeNode
 
+
+//copying
+- (id)copyWithZone:(NSZone *)zone {
+    TreeNode *copy = [[[self class] allocWithZone:zone] init];
+    if (!copy) {
+        return nil;
+    }
+    copy.left = self.left;
+    copy.right = self.right;
+    copy.val = self.val;
+    return copy;
+}
+
+
+
+
+
 + (id)treeNodeWithVal:(NSInteger)num
 {
     return [[self alloc] init:num];

@@ -14,6 +14,25 @@
 @implementation CommonTest
 
 
+- (void)testMutiThread
+{
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        NSLog(@"test");
+    }];
+    
+    
+    NSOperationQueue *queue = [NSOperationQueue new];
+    queue.maxConcurrentOperationCount = 4;
+    NSOperation *op = [[NSOperation alloc] init];
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"test2");
+    }];
+    [op addDependency:op];
+    [queue addOperation:op2];
+    [op cancel];
+}
+
+
 -(void)testString
 {
     NSString *s = @"a b c d e";
@@ -40,10 +59,11 @@ NSInteger intSort(id num1, id num2, void *context)
 {
     NSString *firstName = @"Trevor";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstName == %@", firstName];
-    NSArray *a = @[@2,@4,@5];
+    NSArray<NSNumber *> *a = @[@2,@4,@5];
     NSPredicate *p2 = [NSPredicate predicateWithFormat:@"SELF > 3"];
     NSArray *array = [a filteredArrayUsingPredicate:p2];
-    NSLog(@"%ld", [array count]);
+    NSArray *array2 = [a filteredArrayUsingPredicate:predicate];
+    NSLog(@"%ld - %ld", [array count], [array2 count]);
 }
 
 
@@ -69,6 +89,9 @@ NSInteger intSort(id num1, id num2, void *context)
     [m_array addObject:@"Tutorials11"];
     [m_array addObjectsFromArray:@[@"Eezy",@"Tutorials"]];
     [m_array insertObject:@"Website" atIndex:1];
+    
+    
+    
     NSLog(@"%@",m_array);
     
     
@@ -106,8 +129,12 @@ NSInteger intSort(id num1, id num2, void *context)
     n3.qq = 22;
     
     NSArray *nodes = [NSArray arrayWithObjects:n3,n1,n2, nil];
+    
+    
     NSSortDescriptor *des = [NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES];
     NSArray *newNodes = [nodes sortedArrayUsingDescriptors:@[des]];
+    
+    
     NSArray *newNodes1 =[nodes sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         OCNode *ob1 = (OCNode *)obj1;
         OCNode *ob2 = (OCNode *)obj2;
@@ -117,13 +144,14 @@ NSInteger intSort(id num1, id num2, void *context)
     
     
     NSLog(@"%@", newNodes1);
+    NSLog(@"%@", newNodes);
     
 }
 
 
 -(void)testMap
 {
-    NSDictionary *dic = @{
+    NSDictionary<NSString *, NSNumber *> *dic = @{
                           @"Mercedes-Benz SLK250" : [NSNumber numberWithInt:13],
                           @"Mercedes-Benz E350" : [NSNumber numberWithInt:22],
                           @"BMW M3 Coupe" : [NSNumber numberWithInt:19],
@@ -137,6 +165,7 @@ NSInteger intSort(id num1, id num2, void *context)
     [m_dic setObject:@2329 forKey:@"qq11"];
     //    [m_dic removeObjectForKey:@"qq"];
     NSLog(@"%@", m_dic.description);
+    NSLog(@"%@", dic.description);
 }
 
 

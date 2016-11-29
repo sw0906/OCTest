@@ -14,10 +14,14 @@
 #import "TreeTest.h"
 #import "LinkTest.h"
 #import "ViewTest.h"
+#import "CustomCell.h"
+#import "FBTest.h"
 
+@class DeepLinkManager;
 
 @interface ViewController ()
-
+@property (nonatomic, strong) NSCache *imageCache;
+@property (nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation ViewController
@@ -29,8 +33,10 @@
 //    [self testCommon];
 //    [self testDp];
 //    [self testDispatch];
-//    [self testTree];
-    [self testView];
+//    [self testDispatchBlock];
+    [self testTree];
+//    [self testView];
+    [self testFb];
     
 }
 
@@ -40,7 +46,27 @@
 }
 
 
+//
+//+ (instancetype)shareInstance {
+//    static dispatch_once_t once;
+//    static DeepLinkManager * deepLinkManager = nil;
+//    
+//    dispatch_once(&once, ^{
+//        deepLinkManager = [[self alloc] init];
+//    });
+//    
+//    return deepLinkManager;
+//}
 
+
+
+
+#pragma mark - fb
+-(void)testFb
+{
+    FBTest *fb = [FBTest new];
+    [fb testAnagram];
+}
 
 #pragma mark - dp
 
@@ -64,7 +90,8 @@
 - (void)testTree
 {
     TreeTest *tree = [[TreeTest alloc] init];
-    [tree testLCA];
+//    [tree testLCA];
+    [tree testCopy];
 }
 
 
@@ -79,25 +106,33 @@
 
 
 #pragma mark - dispatch
-- (void) testDispatch2
+-(void)testDispatchBlock // block
 {
-    CancellationToken *token = cancellable_dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+    dispatch_cancel_block_t cancelBlock = dispatch_async_if(dispatch_get_main_queue(), ^{
+        NSLog(@"Block 1 executed");
+    });
+    
+    cancelBlock(YES);
+}
+
+- (void) testDispatch // token
+{
+    CancellationToken *token = cancellable_dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         NSLog(@"Here");
     });
     
-    [token cancel];
+//    [token cancel];
 }
 
-- (void)testDispatch
+
+//
+- (void)testDispatch3
 {
     CancellationToken *t = [self cancellable_dispatch_after2:dispatch_time(DISPATCH_TIME_NOW,  2 * NSEC_PER_SEC) withQueue:dispatch_get_main_queue() withBlock:^{
         NSLog(@"pass");
     }];
     t.cancelled = YES;
 }
-
-
-
 
 - (CancellationToken *) cancellable_dispatch_after2:(dispatch_time_t)t withQueue:(dispatch_queue_t)q withBlock:(dispatch_block_t)b
 {
@@ -110,6 +145,10 @@
     dispatch_after(t, q, newBlock);
     return cancelState;
 }
+
+
+
+#pragma mark - test cache
 
 
 @end
