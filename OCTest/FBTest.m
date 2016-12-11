@@ -67,6 +67,10 @@
 }
 
 
+
+
+
+
 #pragma mark - string to number
 - (void)testStoNum
 {
@@ -327,5 +331,41 @@
         }
     }
 }
+
+
+#pragma mark - reverse words
+-(void)testReversWords
+{
+    NSString *str = @"good is not god";
+    NSLog(@"%@", [self reverseSentence:str]);
+    NSLog(@"%@", [self reverseSentence2:str]);
+}
+
+
+- (NSString *)reverseSentence:(NSString *)words
+{
+    NSArray *list = [words componentsSeparatedByString:@" "]; //[lazy , brown , fox ]
+    NSMutableString *newString = [NSMutableString new];
+    
+    for(NSInteger i = [list count]-1; i>=0; i--) //
+    {
+        [newString appendString: list[i]];
+        if(i != 0 )
+        {
+            [newString appendString:@" "];
+        }
+    }
+    return newString;
+}
+
+
+- (NSString *)reverseSentence2:(NSString *)words
+{
+    NSArray *list = [words componentsSeparatedByString:@" "];
+    NSArray *reList = [[list reverseObjectEnumerator] allObjects];
+    NSString *newString = [reList componentsJoinedByString:@" "];
+    return newString;
+}
+
 
 @end

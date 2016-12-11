@@ -12,6 +12,7 @@
 
 @interface FBTest : NSObject
 - (void)testAnagram;
+-(void)testReversWords;
 - (void)testStoNum;
 -(void)testNested;
 -(void)testPhonePad;

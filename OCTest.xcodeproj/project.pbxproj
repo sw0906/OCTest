@@ -32,6 +32,7 @@
 		D058031D1DDA01A600FA5F7F /* LinkTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D058031C1DDA01A600FA5F7F /* LinkTest.m */; };
 		D05803211DDD5F0000FA5F7F /* ViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D05803201DDD5F0000FA5F7F /* ViewTest.m */; };
 		D05803261DE206DB00FA5F7F /* CancellationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = D05803251DE206DB00FA5F7F /* CancellationToken.m */; };
+		D075FEB91DFD568C0064E043 /* StringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D075FEB81DFD568C0064E043 /* StringTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		D05803201DDD5F0000FA5F7F /* ViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTest.m; sourceTree = "<group>"; };
 		D05803241DE206DB00FA5F7F /* CancellationToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CancellationToken.h; sourceTree = "<group>"; };
 		D05803251DE206DB00FA5F7F /* CancellationToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancellationToken.m; sourceTree = "<group>"; };
+		D075FEB71DFD568C0064E043 /* StringTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringTest.h; sourceTree = "<group>"; };
+		D075FEB81DFD568C0064E043 /* StringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +221,8 @@
 				D05803201DDD5F0000FA5F7F /* ViewTest.m */,
 				D02AB0E71DE86CE2001D78E5 /* FBTest.h */,
 				D02AB0E81DE86CE2001D78E5 /* FBTest.m */,
+				D075FEB71DFD568C0064E043 /* StringTest.h */,
+				D075FEB81DFD568C0064E043 /* StringTest.m */,
 			);
 			name = Algorithm;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				D02AB0EC1DE99A71001D78E5 /* NestedInteger.m in Sources */,
 				8413C0A31DD1BF1400CA2DC7 /* main.m in Sources */,
 				8413C0D91DD1D23800CA2DC7 /* OCNode.m in Sources */,
+				D075FEB91DFD568C0064E043 /* StringTest.m in Sources */,
 				D058031D1DDA01A600FA5F7F /* LinkTest.m in Sources */,
 				D02AB0E31DE83F11001D78E5 /* CustomCell.m in Sources */,
 			);

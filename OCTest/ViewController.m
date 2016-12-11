@@ -16,6 +16,7 @@
 #import "ViewTest.h"
 #import "CustomCell.h"
 #import "FBTest.h"
+#import "StringTest.h"
 
 @class DeepLinkManager;
 
@@ -34,9 +35,10 @@
 //    [self testDp];
 //    [self testDispatch];
 //    [self testDispatchBlock];
-    [self testTree];
+//    [self testTree];
 //    [self testView];
-    [self testFb];
+//    [self testFb];
+    [self testString];
     
 }
 
@@ -58,14 +60,19 @@
 //    return deepLinkManager;
 //}
 
+#pragma mark - string
 
-
+-(void)testString
+{
+    StringTest *str = [StringTest new];
+    [str testString];
+}
 
 #pragma mark - fb
 -(void)testFb
 {
     FBTest *fb = [FBTest new];
-    [fb testAnagram];
+    [fb testReversWords];
 }
 
 #pragma mark - dp
