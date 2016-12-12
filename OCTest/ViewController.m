@@ -32,7 +32,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
 //    [self testCommon];
-//    [self testDp];
+    [self testDp];
 //    [self testDispatch];
 //    [self testDispatchBlock];
 //    [self testTree];
@@ -87,7 +87,7 @@
 -(void)testDp
 {
     DpTest *test = [[DpTest alloc] init];
-    [test testMinCut];
+    [test testDp];
 }
 
 

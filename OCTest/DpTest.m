@@ -22,6 +22,74 @@
 
 @implementation DpTest
 
+- (void)testDp
+{
+    [self testLongCommonSub];
+}
+
+#pragma mark - Longest Common Substring
+- (void)testLongCommonSub
+{
+    NSString *a =  @"abcdefgg";
+    NSString *b = @"cbcdefdd";
+    NSInteger re = [self longestCommonSubstring:a withB:b];
+    NSLog(@"%ld", re);
+}
+
+//Example
+//Given A = "ABCD", B = "CBCE", return 2.
+
+// int longestCommonSubstring(string &A, string &B) {
+
+- (NSInteger)longestCommonSubstring:(NSString *)a withB:(NSString *)b
+{
+    if (a.length == 0 || b.length == 0) {
+        return 0;
+    }
+    
+    //state
+    NSInteger dp[a.length][b.length];
+    
+    //init
+    NSInteger maxCount = 0;
+    for (NSInteger i=0; i<a.length; i++) {
+        if ([a characterAtIndex:i] == [b characterAtIndex:0]) {
+            maxCount = 1;
+            dp[i][0] = 1;
+        }
+        else
+        {
+            dp[i][0] = 0;
+        }
+    }
+    
+    for (NSInteger i=0; i<b.length; i++) {
+        if ([b characterAtIndex:i] == [a characterAtIndex:0]) {
+            maxCount = 1;
+            dp[0][i] = 1;
+        }
+        else
+        {
+            dp[0][i] = 0;
+        }
+    }
+    
+    //dp
+    for (NSInteger i=1; i<a.length; i++) {
+        for (NSInteger j=1; j<b.length; j++) {
+            if ([a characterAtIndex:i] == [b characterAtIndex:j]) {
+                dp[i][j] = dp[i-1][j-1]+1;
+                maxCount = MAX(dp[i][j], maxCount);
+            }
+            else
+            {
+                dp[i][j] = 0;
+            }
+        }
+    }
+    return maxCount;
+}
+
 
 #pragma mark - parlindrome cut
 - (void)testMinCut
@@ -100,10 +168,10 @@
     //state
     NSInteger dp[al+1][bl+1];
     
-    for (int i=0; i<al; i++) {
+    for (int i=0; i<=al; i++) {
         dp[i][0] = i;
     }
-    for (int i=0; i<bl; i++) {
+    for (int i=0; i<=bl; i++) {
         dp[0][i] = i;
     }
     

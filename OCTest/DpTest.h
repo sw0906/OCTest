@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface DpTest : NSObject
+- (void)testDp;
+
 
 -(void)testMinCut;
 -(void)testEdit;

@@ -14,7 +14,49 @@
 {
 //    [self testStr];
 //    [self testRotate];
-    [self testPermu];
+//    [self testPermu];
+    [self tesLongPali];
+}
+
+#pragma mark -  Longest Palindromic Substring
+
+- (void)tesLongPali
+{
+    NSString *s1 = @"abcdzdcab";
+    [self longestPalindrome:s1];
+}
+
+//Example
+//Given the string = "abcdzdcab", return "cdzdc".
+//string longestPalindrome(string& s) {
+
+-(NSString *)longestPalindrome:(NSString *)s
+{
+    NSInteger maxCount = 0;
+    NSInteger po_start = 0, po_end = s.length-1;
+    
+    for (NSInteger i=0; i<s.length; i++) {
+        NSInteger backIndex = 0;
+        while ([s characterAtIndex:i] != [s characterAtIndex:s.length-1-backIndex]) {
+            backIndex++;
+        }
+        po_start = i;
+        po_end = s.length - 1 - backIndex;
+        
+        
+        NSInteger start = i;
+        while ([s characterAtIndex:start] == [s characterAtIndex:s.length-1-backIndex]) {
+            start++;
+            backIndex++;
+        }
+        if ( start >= s.length-1-backIndex ) {
+            maxCount = po_end - po_start + 1;
+            NSString *result = [s substringWithRange:NSMakeRange(po_start, maxCount)];
+            return result;
+        }
+        
+    }
+    return [s substringToIndex:1];
 }
 
 
