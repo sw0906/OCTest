@@ -15,7 +15,101 @@
 //    [self testStr];
 //    [self testRotate];
 //    [self testPermu];
-    [self tesLongPali];
+//    [self tesLongPali];
+    [self testCompareStr];
+}
+
+
+#pragma mark -  Compare Strings
+- (void)testCompareStr
+{
+//    BOOL value1 = [self compareStrings:@"AABCC" withB:@"ACBD"];
+//    BOOL value2 = [self compareStrings:@"BCCCD" withB:@"ACBD"];
+//    BOOL value3 = [self compareStrings:@"ACBDD" withB:@"DCB"];
+    BOOL value4 = [self compareStrings:@"ACBDD" withB:@"ADBD"];
+    NSString *v = value4 ? @"Yes" : @"No";
+    NSLog(@"%@", v);
+    
+}
+
+
+//Example
+//For A = "ABCD", B = "ACD", return true.
+//For A = "ABCD", B = "AABC", return false.
+//bool compareStrings(string A, string B) {
+
+-(BOOL) compareStrings:(NSString *)a withB:(NSString *)b
+{
+    if(a.length < b.length)
+        return false;
+    
+    int flags[26];
+    for(int i=0; i<26; i++)
+    {
+        flags[i] = 0;
+    }
+    
+    for(NSInteger i=0; i<a.length; i++)
+    {
+        char curC = [a characterAtIndex:i];
+        int i = curC - 'A';
+        flags[i] += 1;
+    }
+    
+    for(NSInteger i=0; i<b.length; i++)
+    {
+        char curC = [b characterAtIndex:i];
+        int i = curC - 'A';
+        flags[i] -= 1;
+        if(flags[i] < 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+
+#pragma mark - Longest Common Prefix
+-(void)testLongCommonPrefix
+{
+    NSArray *array = @[@"abssss", @"abssbbbb", @"absqefef", @"absqe"];
+    NSString *re = [self longestCommonPrefix:array];
+    NSLog(@"%@", re);
+}
+
+//Example
+//For strings "ABCD", "ABEF" and "ACEF", the LCP is "A"
+//For strings "ABCDEFG", "ABCEFG" and "ABCEFA", the LCP is "ABC"
+//string longestCommonPrefix(vector<string> &strs) {
+-(NSString *)longestCommonPrefix:(NSArray<NSString *> *)array
+{
+    if([array count] == 0)
+        return nil;
+    else if([array count] == 1)
+        return array[0];
+    
+    
+    NSInteger shortestLength = INT_MAX;
+    for (NSString *s in array) {
+        shortestLength = MIN(shortestLength, s.length);
+    }
+    
+    NSString *tmpS = array[0];
+    for(NSInteger j=0; j<shortestLength; j++)
+    {
+        char curC = [tmpS characterAtIndex:j];
+        for (NSInteger i=1; i<array.count; i++)
+        {
+            NSString *compareS  = array[i];
+            char compareC = [compareS characterAtIndex:j];
+            if(curC != compareC)
+                return [tmpS substringWithRange:NSMakeRange(0,j)];
+        }
+    }
+    
+    return nil;
 }
 
 #pragma mark -  Longest Palindromic Substring
