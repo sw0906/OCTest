@@ -53,6 +53,83 @@
 
 @implementation TreeTest
 
+-(void)testTree
+{
+    [self testBTSum];
+}
+
+
+
+#pragma mark - Binary Tree Path Sum
+
+- (void)testBTSum
+{
+    TreeNode *root = [self getSampleTree];
+    NSArray *arr =[self binaryTreePathSum:root withTarget:12];
+}
+
+//Given a binary tree, find all paths that sum of the nodes in the path equals to a given number target.
+//
+//A valid path is from root node to any of the leaf nodes.
+//
+//Have you met this question in a real interview? Yes
+//Example
+//Given a binary tree, and target = 5:
+//
+//1
+/// \
+//2   4
+/// \
+//2   3
+
+//return
+//
+//[
+// [1, 2, 2],
+// [1, 4]
+// ]
+
+//    vector<vector<int>> binaryTreePathSum(TreeNode *root, int target) {
+-(NSArray *)binaryTreePathSum:(TreeNode *)root withTarget:(NSInteger) target
+{
+    NSMutableArray *result = [NSMutableArray new];
+    NSMutableArray *sub = [NSMutableArray new];
+    [self binaryTreePathSumHelper:root withTarget:target withSub:sub withResult:result];
+    return [NSArray arrayWithArray:result];
+}
+
+
+-(void)binaryTreePathSumHelper:(TreeNode *)root withTarget:(NSInteger) target withSub:(NSMutableArray *)sub withResult:(NSMutableArray *)result
+{
+    if (!root)
+        return;
+    
+    [sub addObject:@(root.val)];
+    NSInteger curValue = [self getTotal:sub];
+    if (curValue == target) {
+        [result addObject:sub];
+    }
+    else if(curValue < target)
+    {
+        [self binaryTreePathSumHelper:root.left withTarget:target withSub:[NSMutableArray arrayWithArray:sub] withResult:result]; //!!! 必须新建一个数组，要不然博爱错
+        [self binaryTreePathSumHelper:root.right withTarget:target withSub:[NSMutableArray arrayWithArray:sub] withResult:result];
+    }
+}
+
+-(NSInteger)getTotal:(NSArray *)sub
+{
+    NSInteger re = 0;
+    for (NSNumber *n in sub) {
+        re += [n integerValue];
+    }
+    return re;
+}
+
+
+
+
+
+
 #pragma mark - is binary search tree
 
 -(void)testValid
@@ -343,7 +420,7 @@ NSInteger (^traverseBlock2)(NSInteger) = ^(NSInteger input) {
 {
     TreeNode *root = [[TreeNode alloc] init:5];
     TreeNode *left = [[TreeNode alloc] init:3];
-    TreeNode *right = [[TreeNode alloc] init:6];
+    TreeNode *right = [[TreeNode alloc] init:7];
     TreeNode *leftl = [[TreeNode alloc] init:2];
     TreeNode *leftr = [[TreeNode alloc] init:4];
     TreeNode *leftll = [[TreeNode alloc] init:1];

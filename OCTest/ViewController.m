@@ -17,6 +17,7 @@
 #import "CustomCell.h"
 #import "FBTest.h"
 #import "StringTest.h"
+#import "BinarySearchTest.h"
 
 @class DeepLinkManager;
 
@@ -32,13 +33,15 @@
     // Do any additional setup after loading the view, typically from a nib.
     
 //    [self testCommon];
-    [self testDp];
+//    [self testDp];
 //    [self testDispatch];
 //    [self testDispatchBlock];
-//    [self testTree];
+    [self testTree];
 //    [self testView];
 //    [self testFb];
-    [self testString];
+//    [self testString];
+//    [self testBS];
+
     
 }
 
@@ -59,6 +62,13 @@
 //    
 //    return deepLinkManager;
 //}
+
+#pragma mark - binary search
+-(void)testBS
+{
+    BinarySearchTest *bs = [BinarySearchTest new];
+    [bs testBS];
+}
 
 #pragma mark - string
 
@@ -98,7 +108,7 @@
 {
     TreeTest *tree = [[TreeTest alloc] init];
 //    [tree testLCA];
-    [tree testCopy];
+    [tree testTree];
 }
 
 

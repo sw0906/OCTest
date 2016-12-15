@@ -18,12 +18,14 @@
 
 
 @interface TreeTest : NSObject
--(void)testValid;
-- (void)testBTree;
-- (void)testLCA;
-- (void)testCopy;
--(void)testTreeToList;
--(void)testListToTree;
+-(void)testTree;
 
-- (void)testTraverBlock;
+//-(void)testValid;
+//- (void)testBTree;
+//- (void)testLCA;
+//- (void)testCopy;
+//-(void)testTreeToList;
+//-(void)testListToTree;
+//
+//- (void)testTraverBlock;
 @end
