@@ -8,6 +8,26 @@
 
 #import "TreeNode.h"
 
+
+@implementation DuLinkNode
++ (id) linkNodeWithVal:(NSInteger)num
+{
+    return [[self alloc] init:num];
+}
+
+- (id) init:(NSInteger) val
+{
+    if( self = [super init])
+    {
+        self.val = val;
+        self.next = nil;
+        self.prev = nil;
+    }
+    return self;
+}
+
+@end
+
 @implementation LinkNode
 
 + (id) linkNodeWithVal:(NSInteger)num

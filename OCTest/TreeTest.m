@@ -55,8 +55,53 @@
 
 -(void)testTree
 {
-    [self testBTSum];
+    [self testBSTtoLinkNode];
 }
+
+
+#pragma mark - Convert Binary Search Tree to Doubly Linked List
+
+-(void)testBSTtoLinkNode
+{
+    TreeNode *root = [self getSampleTree];
+    [self bstToDoublyList:root];
+}
+
+//Convert a binary search tree to doubly linked list with in-order traversal.
+//
+//Example
+//Given a binary search tree:
+//
+//4
+/// \
+//2   5
+/// \
+//1   3
+//return 1<->2<->3<->4<->5
+//DoublyListNode* bstToDoublyList(TreeNode* root) {
+- (DuLinkNode *)bstToDoublyList:(TreeNode *)root
+{
+    NSMutableArray *result = [NSMutableArray new];
+    [self inorderTreeToListHelper:root withResult:result];
+    DuLinkNode *node = [self listToLink:result];
+    return node;
+}
+
+-(DuLinkNode *)listToLink:(NSArray *)array
+{
+    DuLinkNode *preNode = [DuLinkNode new];
+    DuLinkNode *dummyNode = preNode;
+    
+    for (int i=0; i<array.count; i++) {
+        DuLinkNode *curNode = [DuLinkNode linkNodeWithVal:[array[i] integerValue]];
+        curNode.prev = preNode;
+        preNode.next = curNode;
+        preNode = curNode;
+    }
+    return dummyNode.next;
+}
+
+
 
 
 

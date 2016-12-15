@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 
 
+@interface DuLinkNode: NSObject
++ (id) linkNodeWithVal:(NSInteger)num;
+@property (nonatomic) NSInteger val;
+@property (nonatomic, strong) DuLinkNode *next;
+@property (nonatomic, strong) DuLinkNode *prev;
+@end
+
 @interface LinkNode : NSObject
 @property (nonatomic) NSInteger val;
 @property (nonatomic, strong) LinkNode *next;
