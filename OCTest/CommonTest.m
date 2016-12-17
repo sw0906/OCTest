@@ -13,23 +13,38 @@
 
 @implementation CommonTest
 
+-(void)testCommon
+{
+    [self testMutiThread];
+}
 
+#pragma mark -
 - (void)testMutiThread
 {
+    NSOperationQueue *queue = [NSOperationQueue mainQueue];
+    queue.maxConcurrentOperationCount = 4;
+    
+    
+    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         NSLog(@"test");
     }];
     
-    
-    NSOperationQueue *queue = [NSOperationQueue new];
-    queue.maxConcurrentOperationCount = 4;
-    NSOperation *op = [[NSOperation alloc] init];
+    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"test1");
+    }];//[[NSOperation alloc] init];
+
     NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
         NSLog(@"test2");
     }];
-    [op addDependency:op];
+    
+//    [op addDependency:op2];
+    [queue addOperation:op];
     [queue addOperation:op2];
-    [op cancel];
+//    BOOL cancellable = op2.isCancelled;
+//    [op2 cancel];
+//    [queue setSuspended:YES];
+//    [queue cancelAllOperations];
 }
 
 
@@ -129,11 +144,13 @@ NSInteger intSort(id num1, id num2, void *context)
     n3.qq = 22;
     
     NSArray *nodes = [NSArray arrayWithObjects:n3,n1,n2, nil];
+    NSMutableArray *mNodes = [NSMutableArray arrayWithArray:nodes];
     
     
     NSSortDescriptor *des = [NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES];
     NSArray *newNodes = [nodes sortedArrayUsingDescriptors:@[des]];
-    
+    [mNodes sortUsingDescriptors:@[des]];
+
     
     NSArray *newNodes1 =[nodes sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         OCNode *ob1 = (OCNode *)obj1;

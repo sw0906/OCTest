@@ -11,6 +11,9 @@
 #import "NestedInteger.h"
 
 @interface FBTest : NSObject
+
+- (void)testFb;
+
 - (void)testAnagram;
 -(void)testReversWords;
 - (void)testStoNum;

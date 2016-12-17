@@ -24,7 +24,110 @@
 
 - (void)testDp
 {
-    [self testLongCommonSub];
+    [self testInterLeavingString];
+}
+
+
+#pragma mark - Interleaving String
+-(void)testInterLeavingString
+{
+    NSString *s1 = @"aabcc";
+    NSString *s2 = @"dbbca";
+    NSString *s3 = @"aadbbcbcac", *s4 = @"aadbbbaccc";
+    BOOL v1 = [self isInterleave:s1 withS2:s2 withS3:s3];
+    BOOL v2 = [self isInterleave:s2 withS2:s1 withS3:s4];
+}
+//Given three strings: s1, s2, s3, determine whether s3 is formed by the interleaving of s1 and s2.
+//
+//Example
+//For s1 = "aabcc", s2 = "dbbca"
+//
+//When s3 = "aadbbcbcac", return true.
+//When s3 = "aadbbbaccc", return false.
+//bool isInterleave(string s1, string s2, string s3) {
+-(BOOL)isInterleave:(NSString *)s1 withS2:(NSString *)s2 withS3:(NSString *)s3
+{
+    //state
+    BOOL dp[s1.length+1][s2.length+1];
+    
+    //init
+    dp[0][0] = false;
+    for (NSInteger i=1; i<=s1.length; i++) {
+        dp[i][0] = [s1 characterAtIndex:i-1] == [s3 characterAtIndex:i-1];
+    }
+    for (NSInteger i=1; i<=s2.length; i++) {
+        dp[0][i] = [s2 characterAtIndex:i-1] == [s3 characterAtIndex:i-1];
+    }
+    
+    //main
+    for (NSInteger i=1; i<=s1.length; i++) {
+        for (NSInteger j=1; j<=s2.length; j++) {
+            dp[i][j] = false;
+            if (dp[i-1][j]) {
+                BOOL v1 = [s1 characterAtIndex:i-1] == [s3 characterAtIndex:i+j-1];
+                dp[i][j] = v1;
+            }
+            if (dp[i][j-1]) {
+                BOOL v1 = [s2 characterAtIndex:j-1] == [s3 characterAtIndex:i+j-1];
+                dp[i][j] = v1;
+            }
+        }
+    }
+    
+    return dp[s1.length][s2.length];
+}
+
+
+#pragma mark - Distinct Subsequences
+
+-(void)testDistinct
+{
+    NSString *s = @"rabbiitt";
+    NSString *s2 = @"rabbbit";
+    NSString *t = @"rabbit";
+    NSInteger re1 = [self numDistinct:s withT:t];
+    NSInteger re2 = [self numDistinct:s2 withT:t];
+}
+
+//Given a string S and a string T, count the number of distinct subsequences of T in S.
+//
+//A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, "ACE" is a subsequence of "ABCDE" while "AEC" is not).
+//
+//Example
+//Given S = "rabbbit", T = "rabbit", return 3.
+
+//int numDistinct(string &S, string &T) {
+
+-(NSInteger)numDistinct:(NSString *)s withT:(NSString *)t
+{
+    NSInteger lengthS = s.length + 1;
+    NSInteger lengthT = t.length + 1;
+    
+    //state
+    NSInteger dp[lengthS][lengthT];
+    
+    //init
+    for (NSInteger i=0; i<lengthS; i++) {
+        dp[i][0] = 1;
+    }
+    for (NSInteger i=1; i<lengthT; i++) {
+        dp[0][i] = 0;
+    }
+    
+    //main
+    for (NSInteger i=1; i<lengthS; i++) {
+        for (NSInteger j=1; j<lengthT; j++) {
+            if ([s characterAtIndex:i-1] == [t characterAtIndex:j-1]) {
+                NSInteger num = dp[i-1][j-1] + dp[i-1][j];
+                dp[i][j] = num;
+            }
+            else
+            {
+                dp[i][j] = dp[i-1][j];//!!important
+            }
+        }
+    }
+    return dp[s.length][t.length];
 }
 
 #pragma mark - Longest Common Substring
@@ -226,12 +329,30 @@
     return [[counts lastObject] integerValue];
 }
 
-#pragma mark - longestIncreasingSubsequence
+#pragma mark -  Longest Increasing Subsequence
 -(void)testLong
 {
     NSArray *a = @[@4, @2, @4, @5, @7, @3];
     [self longestIncreasingSubsequence:a];
 }
+
+
+//Given a sequence of integers, find the longest increasing subsequence (LIS).
+//
+//You code should return the length of the LIS.
+//
+//Clarification
+//What's the definition of longest increasing subsequence?
+//
+//The longest increasing subsequence problem is to find a subsequence of a given sequence in which the subsequence's elements are in sorted order, lowest to highest, and in which the subsequence is as long as possible. This subsequence is not necessarily contiguous, or unique.
+//
+//https://en.wikipedia.org/wiki/Longest_increasing_subsequence
+//
+//Example
+//For [5, 4, 1, 2, 3], the LIS is [1, 2, 3], return 3
+//For [4, 2, 4, 5, 3, 7], the LIS is [2, 4, 5, 7], return 4
+//    int longestIncreasingSubsequence(vector<int> nums) {
+
 -(NSInteger) longestIncreasingSubsequence:(NSArray *)a
 {
     NSInteger size = [a count];

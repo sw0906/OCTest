@@ -90,10 +90,12 @@
     return 0;
 }
 
+
 - (BOOL) hasNext
 {
     return _indexFlag < [_list count];
 }
+
 
 -(NSArray<NestedInteger *> *)allObjects
 {

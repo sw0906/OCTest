@@ -12,6 +12,10 @@
 
 @interface CommonTest : NSObject
 
+-(void)testCommon;
+
+
+
 -(void)testString;
 
 -(void)testArray;

@@ -9,6 +9,14 @@
 #import "FBTest.h"
 
 @implementation FBTest
+
+- (void)testFb
+{
+    [self testDu];
+}
+
+
+
 #pragma mark -  Anagram checker
 - (void)testAnagram
 {
@@ -19,6 +27,7 @@
 
 - (NSString *)getKey:(NSString *)str
 {
+    //init
     int dic[26];
     for (int i=0; i<26; i++) {
         dic[i] = 0;
@@ -30,6 +39,7 @@
         dic[n] += 1;
     }
     
+    //new string
     NSMutableString *newStr = [NSMutableString new];
     for(int i=0; i<26; i++) {
         int count = dic[i];
@@ -60,7 +70,8 @@
         }
     }
     
-    for (NSMutableArray *list in [dic allValues]) {
+    for (NSMutableArray *list in [dic allValues]) //!! allValues
+    {
         [re addObject:list];
     }
     return re;
@@ -88,6 +99,8 @@
     }
     return total;
 }
+
+
 
 #pragma mark - nested
 -(void)testNested
@@ -129,7 +142,7 @@
     [n5 addObject:t4];
     
     NestedIterator *it = [NestedIterator nestedIterator:n5];
-    [it allObjects];
+    [it allObjects]; //!!important
     
 //    NSInteger n11 = [it next];
 //    NSInteger n22 = [it next];
@@ -152,8 +165,8 @@
 -(NSArray *)getArraysWithInputs:(NSString *)str
 {
     NSArray *counts = @[@0,@3,@3,@3,@3,@3,@4,@3,@4];
-    NSMutableDictionary *dicNum = [NSMutableDictionary new];
-    NSMutableDictionary *dicChar = [NSMutableDictionary new];
+    NSMutableDictionary *dicNum = [NSMutableDictionary new];//dicNum[1] = @"1,a,b,c"
+    NSMutableDictionary *dicChar = [NSMutableDictionary new];//dicChar[a] = 1
     
     //init dic
     char begin = 'a';
@@ -167,13 +180,13 @@
         {
             NSString *curChar = [NSString stringWithFormat:@"%c", begin];
             dicChar[curChar] = curNumber;
-            [mutArray addObject:[NSString stringWithFormat:@"%c", begin]];
-            begin++;
-            countC--;
+            [mutArray addObject:curChar]; //add char
+            begin++; // !!
+            countC--; // !!
         }
         
         
-        [mutArray addObject:curNumber];
+        [mutArray addObject:curNumber];//add number
         dicNum[curNumber] = mutArray;
         dicChar[curNumber] = curNumber;
     }
@@ -185,7 +198,7 @@
     {
         char c = [str characterAtIndex:i];
         NSString *n =  dicChar[[NSString stringWithFormat:@"%c", c]];
-        NSMutableArray *counts = dicNum[n];
+        NSMutableArray *counts = dicNum[n];//1 a b c
         
         
         NSMutableArray *tmp = [NSMutableArray new];
@@ -194,7 +207,7 @@
             NSString *s = counts[i];
             if(![result count])
             {
-                [tmp addObject:s];
+                [tmp addObject:s];//1 a b c
             }
             else
             {
@@ -205,7 +218,7 @@
                 }
             }
         }
-        result = tmp;
+        result = tmp; // !!!
     }
     return result;
     
@@ -270,7 +283,7 @@
 {
     NSArray *array = @[@2, @1, @0, @2, @0, @0, @3, @4];
     NSMutableArray *muA = [array mutableCopy];
-    [self removeDu3:muA];
+    [self removeDuplicate2:muA];
     
     
     
@@ -279,13 +292,8 @@
 
 - (void)removeDuplicate:(NSMutableArray *)array
 {
-//    NSArray *newA = [array sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-//        return [(NSNumber *)obj1 integerValue] > [(NSNumber *)obj2 integerValue];
-//    }];
-//    
-    
     //sort
-    [array sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+    [array sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [(NSNumber *)obj1 integerValue] < [(NSNumber *)obj2 integerValue] ? NSOrderedAscending : NSOrderedDescending;//从小到大
     }];
     
@@ -293,9 +301,27 @@
     NSInteger i = 1;
     while (i < [array count]) {
         while (array[i-1] == array[i]) {
-            [array removeObjectAtIndex:i];
+            [array removeObjectAtIndex:i];//!!important
         }
         i++;
+    }
+}
+
+- (void)removeDuplicate2:(NSMutableArray *)array
+{
+    [array sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        if ([(NSNumber *)obj1 integerValue] < [(NSNumber *)obj2 integerValue]) {
+            return NSOrderedAscending;
+        }
+        
+        return NSOrderedDescending;
+    }];
+    
+    for (NSInteger i=1; i<array.count; i++) {
+        if (array[i] == array[i-1]) {
+            [array removeObjectAtIndex:i];
+            i--;
+        }
     }
 }
 

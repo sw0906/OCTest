@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) UIView *sub;
 
-
--(void)testCommonView;
+-(void)testView;
 
 @end

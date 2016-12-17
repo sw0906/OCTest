@@ -32,11 +32,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-//    [self testCommon];
+    [self testCommon];
 //    [self testDp];
 //    [self testDispatch];
-//    [self testDispatchBlock];
-    [self testTree];
+//    [self testTree];
 //    [self testView];
 //    [self testFb];
 //    [self testString];
@@ -82,7 +81,7 @@
 -(void)testFb
 {
     FBTest *fb = [FBTest new];
-    [fb testReversWords];
+    [fb testFb];
 }
 
 #pragma mark - dp
@@ -90,7 +89,7 @@
 -(void)testCommon
 {
     CommonTest *ct = [[CommonTest alloc] init];
-    [ct testFilter];
+    [ct testCommon];
 }
 
 //#import "DpTest.h"
@@ -117,12 +116,18 @@
 -(void)testView
 {
     ViewTest *v = [ViewTest new];
-    [v testCommonView];
+    [v testView];
 }
 
 
 
 #pragma mark - dispatch
+-(void)testDispatch
+{
+    [self testDispatchBlock];
+    [self testDispatchToken];
+}
+
 -(void)testDispatchBlock // block
 {
     dispatch_cancel_block_t cancelBlock = dispatch_async_if(dispatch_get_main_queue(), ^{
@@ -132,13 +137,13 @@
     cancelBlock(YES);
 }
 
-- (void) testDispatch // token
+- (void) testDispatchToken // token
 {
     CancellationToken *token = cancellable_dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         NSLog(@"Here");
     });
     
-//    [token cancel];
+    [token cancel];
 }
 
 
