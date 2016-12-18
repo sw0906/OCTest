@@ -18,8 +18,7 @@
 #import "FBTest.h"
 #import "StringTest.h"
 #import "BinarySearchTest.h"
-
-@class DeepLinkManager;
+#import "DataStructureTest.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSCache *imageCache;
@@ -32,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self testCommon];
+//    [self testCommon];
 //    [self testDp];
 //    [self testDispatch];
 //    [self testTree];
@@ -40,7 +39,8 @@
 //    [self testFb];
 //    [self testString];
 //    [self testBS];
-
+//    [self testLink];
+    [self testData];
     
 }
 
@@ -50,17 +50,19 @@
 }
 
 
-//
-//+ (instancetype)shareInstance {
-//    static dispatch_once_t once;
-//    static DeepLinkManager * deepLinkManager = nil;
-//    
-//    dispatch_once(&once, ^{
-//        deepLinkManager = [[self alloc] init];
-//    });
-//    
-//    return deepLinkManager;
-//}
+#pragma mark - data structrue
+- (void)testData
+{
+    DataStructureTest *data = [DataStructureTest new];
+    [data testData];
+}
+
+#pragma mark - link node
+-(void)testLink
+{
+    LinkTest *lt = [LinkTest new];
+    [lt testLink];
+}
 
 #pragma mark - binary search
 -(void)testBS
@@ -126,6 +128,7 @@
 {
     [self testDispatchBlock];
     [self testDispatchToken];
+    [self testDispatch3];
 }
 
 -(void)testDispatchBlock // block
@@ -147,13 +150,18 @@
 }
 
 
-//
 - (void)testDispatch3
 {
     CancellationToken *t = [self cancellable_dispatch_after2:dispatch_time(DISPATCH_TIME_NOW,  2 * NSEC_PER_SEC) withQueue:dispatch_get_main_queue() withBlock:^{
         NSLog(@"pass");
     }];
     t.cancelled = YES;
+    
+    
+    dispatch_cancel_block_t cancelBlock = [self cancellable_dispatch_after3:dispatch_time(DISPATCH_TIME_NOW,  2 * NSEC_PER_SEC) withQueue:dispatch_get_main_queue() withBlock:^{
+        NSLog(@"pass2");
+    }];
+
 }
 
 - (CancellationToken *) cancellable_dispatch_after2:(dispatch_time_t)t withQueue:(dispatch_queue_t)q withBlock:(dispatch_block_t)b
@@ -169,8 +177,50 @@
 }
 
 
+-(dispatch_cancel_block_t)cancellable_dispatch_after3:(dispatch_time_t)t withQueue:(dispatch_queue_t)q withBlock:(dispatch_block_t)b
+{
+    dispatch_cancel_block_t cancelBlock = ^(BOOL isCancelled)
+    {
+        if (!isCancelled) {
+            b();
+        }
+    };
+    return cancelBlock;
+}
+
+#pragma mark - Operation queue
+
+- (void)testMutiThread
+{
+    NSOperationQueue *queue = [NSOperationQueue mainQueue];
+    queue.maxConcurrentOperationCount = 4;
+    
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        NSLog(@"test");
+    }];
+    
+    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"test1");
+    }];//[[NSOperation alloc] init];
+    
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"test2");
+    }];
+    
+    //    [op addDependency:op2];
+    [queue addOperation:op];
+    [queue addOperation:op2];
+    //    BOOL cancellable = op2.isCancelled;
+    //    [op2 cancel];
+    //    [queue setSuspended:YES];
+    //    [queue cancelAllOperations];
+}
+
+
+
 
 #pragma mark - test cache
+
 
 
 @end

@@ -15,37 +15,9 @@
 
 -(void)testCommon
 {
-    [self testMutiThread];
 }
 
 #pragma mark -
-- (void)testMutiThread
-{
-    NSOperationQueue *queue = [NSOperationQueue mainQueue];
-    queue.maxConcurrentOperationCount = 4;
-    
-    
-    
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        NSLog(@"test");
-    }];
-    
-    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
-        NSLog(@"test1");
-    }];//[[NSOperation alloc] init];
-
-    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
-        NSLog(@"test2");
-    }];
-    
-//    [op addDependency:op2];
-    [queue addOperation:op];
-    [queue addOperation:op2];
-//    BOOL cancellable = op2.isCancelled;
-//    [op2 cancel];
-//    [queue setSuspended:YES];
-//    [queue cancelAllOperations];
-}
 
 
 -(void)testString

@@ -10,5 +10,5 @@
 #import "TreeNode.h"
 
 @interface LinkTest : NSObject
-
+-(void)testLink;
 @end

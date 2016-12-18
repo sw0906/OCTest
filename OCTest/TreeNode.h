@@ -7,6 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+@interface DuLinkNodeWithIndex: NSObject //LRCache
++ (id) linkNodeWithNum:(NSNumber *)num withKey:(NSNumber *)key;
+@property (nonatomic, strong) NSNumber *val;
+@property (nonatomic, strong) NSNumber *index;
+@property (nonatomic, strong) DuLinkNodeWithIndex *next;
+@property (nonatomic, strong) DuLinkNodeWithIndex *prev;
+@end
 
 
 @interface DuLinkNode: NSObject

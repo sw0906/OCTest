@@ -34,6 +34,8 @@
 		D05803211DDD5F0000FA5F7F /* ViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D05803201DDD5F0000FA5F7F /* ViewTest.m */; };
 		D05803261DE206DB00FA5F7F /* CancellationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = D05803251DE206DB00FA5F7F /* CancellationToken.m */; };
 		D075FEB91DFD568C0064E043 /* StringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D075FEB81DFD568C0064E043 /* StringTest.m */; };
+		D07F350F1E06379400DF322A /* SWManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D07F350E1E06379400DF322A /* SWManager.m */; };
+		D07F35121E067EA900DF322A /* DataStructureTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D07F35111E067EA900DF322A /* DataStructureTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,10 @@
 		D05803251DE206DB00FA5F7F /* CancellationToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancellationToken.m; sourceTree = "<group>"; };
 		D075FEB71DFD568C0064E043 /* StringTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringTest.h; sourceTree = "<group>"; };
 		D075FEB81DFD568C0064E043 /* StringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringTest.m; sourceTree = "<group>"; };
+		D07F350D1E06379400DF322A /* SWManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWManager.h; sourceTree = "<group>"; };
+		D07F350E1E06379400DF322A /* SWManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWManager.m; sourceTree = "<group>"; };
+		D07F35101E067EA900DF322A /* DataStructureTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStructureTest.h; sourceTree = "<group>"; };
+		D07F35111E067EA900DF322A /* DataStructureTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStructureTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,14 +162,14 @@
 				8413C0A41DD1BF1400CA2DC7 /* AppDelegate.h */,
 				8413C0A71DD1BF1400CA2DC7 /* ViewController.h */,
 				8413C0A81DD1BF1400CA2DC7 /* ViewController.m */,
+				D02AB0E41DE83FCD001D78E5 /* TableViewController.h */,
+				D02AB0E51DE83FCD001D78E5 /* TableViewController.m */,
 				8413C0AA1DD1BF1400CA2DC7 /* Main.storyboard */,
 				8413C0B01DD1BF1400CA2DC7 /* Assets.xcassets */,
 				8413C0B21DD1BF1400CA2DC7 /* LaunchScreen.storyboard */,
 				8413C0B51DD1BF1400CA2DC7 /* Info.plist */,
 				8413C0AD1DD1BF1400CA2DC7 /* OCTest.xcdatamodeld */,
 				8413C0A11DD1BF1400CA2DC7 /* Supporting Files */,
-				D02AB0E41DE83FCD001D78E5 /* TableViewController.h */,
-				D02AB0E51DE83FCD001D78E5 /* TableViewController.m */,
 			);
 			path = OCTest;
 			sourceTree = "<group>";
@@ -205,6 +211,8 @@
 				D02AB0E21DE83F11001D78E5 /* CustomCell.m */,
 				D02AB0EA1DE99A71001D78E5 /* NestedInteger.h */,
 				D02AB0EB1DE99A71001D78E5 /* NestedInteger.m */,
+				D07F350D1E06379400DF322A /* SWManager.h */,
+				D07F350E1E06379400DF322A /* SWManager.m */,
 			);
 			name = "M\U001dodel";
 			sourceTree = "<group>";
@@ -216,6 +224,8 @@
 				D05803201DDD5F0000FA5F7F /* ViewTest.m */,
 				D05803181DDA00BB00FA5F7F /* CommonTest.h */,
 				D05803191DDA00BB00FA5F7F /* CommonTest.m */,
+				D075FEB71DFD568C0064E043 /* StringTest.h */,
+				D075FEB81DFD568C0064E043 /* StringTest.m */,
 				D02AB0E71DE86CE2001D78E5 /* FBTest.h */,
 				D02AB0E81DE86CE2001D78E5 /* FBTest.m */,
 				842A7B061DD992B500A1729C /* DpTest.h */,
@@ -224,10 +234,10 @@
 				D058031C1DDA01A600FA5F7F /* LinkTest.m */,
 				D05803141DD9FF1F00FA5F7F /* TreeTest.h */,
 				D05803151DD9FF1F00FA5F7F /* TreeTest.m */,
-				D075FEB71DFD568C0064E043 /* StringTest.h */,
-				D075FEB81DFD568C0064E043 /* StringTest.m */,
 				84C356E41E027A2E0048FD27 /* BinarySearchTest.h */,
 				84C356E51E027A2E0048FD27 /* BinarySearchTest.m */,
+				D07F35101E067EA900DF322A /* DataStructureTest.h */,
+				D07F35111E067EA900DF322A /* DataStructureTest.m */,
 			);
 			name = Algorithm;
 			sourceTree = "<group>";
@@ -372,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D05803131DD9FEA100FA5F7F /* TreeNode.m in Sources */,
+				D07F35121E067EA900DF322A /* DataStructureTest.m in Sources */,
 				8413C0A91DD1BF1400CA2DC7 /* ViewController.m in Sources */,
 				842A7B081DD992B500A1729C /* DpTest.m in Sources */,
 				8413C0AF1DD1BF1400CA2DC7 /* OCTest.xcdatamodeld in Sources */,
@@ -388,6 +399,7 @@
 				8413C0D91DD1D23800CA2DC7 /* OCNode.m in Sources */,
 				D075FEB91DFD568C0064E043 /* StringTest.m in Sources */,
 				D058031D1DDA01A600FA5F7F /* LinkTest.m in Sources */,
+				D07F350F1E06379400DF322A /* SWManager.m in Sources */,
 				D02AB0E31DE83F11001D78E5 /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

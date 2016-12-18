@@ -12,13 +12,18 @@
 
 -(void)testLink
 {
-
+    [self testSwap];
 }
 
 
 
 
-#pragma mark - 
+#pragma mark - Swap Two Nodes in Linked List
+-(void)testSwap
+{
+    LinkNode *head = [self getSampleNodeList];
+    LinkNode *newlist = [self swapNodes:head withV1:2 withV2:4];
+}
 
 //Given a linked list and two values v1 and v2. Swap the two nodes in the linked list with values v1 and v2. It's guaranteed there is no duplicate values in the linked list. If v1 or v2 does not exist in the given linked list, do nothing.
 //
@@ -35,10 +40,38 @@
 
 -(LinkNode *)swapNodes:(LinkNode *)head withV1:(NSInteger)v1 withV2:(NSInteger)v2
 {
-    return nil;
+    LinkNode *dummyNode = [LinkNode new];
+    dummyNode.next = head;
+    
+    LinkNode *pre1 = [self findNodePre:dummyNode withV:v1];
+    LinkNode *pre2 = [self findNodePre:dummyNode withV:v2];
+    
+    LinkNode *cur1 = pre1.next;
+    LinkNode *cur2 = pre2.next;
+    
+    LinkNode *after1 = cur1.next;
+    LinkNode *after2 = cur2.next;
+    
+    pre1.next = cur2;
+    cur2.next = after1;
+    
+    pre2.next = cur1;
+    cur1.next = after2;
+    
+    return dummyNode.next;
 }
 
-//-()
+-(LinkNode *)findNodePre:(LinkNode *)head withV:(NSInteger)v
+{
+    LinkNode *dummyNode = head;
+    while (dummyNode.next) {
+        if (dummyNode.next.val == v) {
+            return dummyNode;
+        }
+        dummyNode = dummyNode.next; // !!
+    }
+    return nil;
+}
 
 #pragma mark -
 //reverse list
@@ -126,6 +159,21 @@
     n4.next = n5;
     LinkNode *newHead = [self removeDuplicate2:n0];
     NSLog(@"re is %ld", newHead.val);
+}
+
+#pragma mark - 
+-(LinkNode *)getSampleNodeList
+{
+    LinkNode *n1 = [LinkNode linkNodeWithVal:1];//[[LinkNode alloc] init:1];
+    LinkNode *n2 = [LinkNode linkNodeWithVal:2];//[[LinkNode alloc] init:2];
+    LinkNode *n3 = [LinkNode linkNodeWithVal:3];
+    LinkNode *n4 = [LinkNode linkNodeWithVal:4];
+    LinkNode *n5 = [LinkNode linkNodeWithVal:5];
+    n1.next = n2;
+    n2.next = n3;
+    n3.next = n4;
+    n4.next = n5;
+    return n1;
 }
 
 @end
