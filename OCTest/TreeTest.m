@@ -55,7 +55,8 @@
 
 -(void)testTree
 {
-    [self testBSTtoLinkNode];
+    [self testCopy];
+//    [self testBSTtoLinkNode];
 }
 
 
@@ -323,6 +324,9 @@
     leftl.left = leftll;
     TreeNode *copyN = [root copyWithZone:NULL];
     
+    if (copyN == root) {
+        return;
+    }
  
     TreeNode *node = [self findSameNode:root withR2:copyN withNode:leftr];
     NSLog(@"%ld", node.val);

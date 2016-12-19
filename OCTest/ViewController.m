@@ -19,6 +19,7 @@
 #import "StringTest.h"
 #import "BinarySearchTest.h"
 #import "DataStructureTest.h"
+#import "GraphTest.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSCache *imageCache;
@@ -40,13 +41,21 @@
 //    [self testString];
 //    [self testBS];
 //    [self testLink];
-    [self testData];
+//    [self testData];
+    [self testGraph];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - graph
+-(void)testGraph
+{
+    GraphTest *graph = [GraphTest new];
+    [graph testGraph];
 }
 
 
