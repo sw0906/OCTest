@@ -24,6 +24,7 @@
 		842A7B0A1DD992B500A1729C /* DpTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A7B071DD992B500A1729C /* DpTest.m */; };
 		84C356E61E027A2E0048FD27 /* BinarySearchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C356E51E027A2E0048FD27 /* BinarySearchTest.m */; };
 		84D9AB001E07C442001C189F /* GraphTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9AAFF1E07C442001C189F /* GraphTest.m */; };
+		84D9AB031E07D250001C189F /* SearchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9AB021E07D250001C189F /* SearchTest.m */; };
 		D02AB0E31DE83F11001D78E5 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D02AB0E21DE83F11001D78E5 /* CustomCell.m */; };
 		D02AB0E61DE83FCD001D78E5 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02AB0E51DE83FCD001D78E5 /* TableViewController.m */; };
 		D02AB0E91DE86CE2001D78E5 /* FBTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D02AB0E81DE86CE2001D78E5 /* FBTest.m */; };
@@ -82,6 +83,8 @@
 		84C356E51E027A2E0048FD27 /* BinarySearchTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinarySearchTest.m; sourceTree = "<group>"; };
 		84D9AAFE1E07C442001C189F /* GraphTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphTest.h; sourceTree = "<group>"; };
 		84D9AAFF1E07C442001C189F /* GraphTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphTest.m; sourceTree = "<group>"; };
+		84D9AB011E07D250001C189F /* SearchTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTest.h; sourceTree = "<group>"; };
+		84D9AB021E07D250001C189F /* SearchTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTest.m; sourceTree = "<group>"; };
 		D02AB0E11DE83F11001D78E5 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		D02AB0E21DE83F11001D78E5 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		D02AB0E41DE83FCD001D78E5 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 				D07F35111E067EA900DF322A /* DataStructureTest.m */,
 				84D9AAFE1E07C442001C189F /* GraphTest.h */,
 				84D9AAFF1E07C442001C189F /* GraphTest.m */,
+				84D9AB011E07D250001C189F /* SearchTest.h */,
+				84D9AB021E07D250001C189F /* SearchTest.m */,
 			);
 			name = Algorithm;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				D058031D1DDA01A600FA5F7F /* LinkTest.m in Sources */,
 				D07F350F1E06379400DF322A /* SWManager.m in Sources */,
 				D02AB0E31DE83F11001D78E5 /* CustomCell.m in Sources */,
+				84D9AB031E07D250001C189F /* SearchTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,6 +32,9 @@
     [self testConnect];
 }
 
+
+
+
 #pragma mark -  Find the Connected Component in the Undirected Graph
 - (void)testConnect
 {
@@ -61,6 +64,8 @@
     
     NSMutableArray *result = [self connectedSet:array];
 }
+
+
 //Find the number connected component in the undirected graph. Each node in the graph contains a label and a list of its neighbors. (a connected component (or just component) of an undirected graph is a subgraph in which any two vertices are connected to each other by paths, and which is connected to no additional vertices in the supergraph.)
 //vector<vector<int>> connectedSet(vector<UndirectedGraphNode*>& nodes) {
 - (NSMutableArray *)connectedSet:(NSArray<UndirectedGraphNode *> *) nodes
@@ -87,7 +92,6 @@
     }
     
     [list addObject:node];
-    
     
     for (UndirectedGraphNode *n in node.neighbours) {
         [self getAllConnectedNodes:n subList:list];

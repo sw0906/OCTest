@@ -20,6 +20,7 @@
 #import "BinarySearchTest.h"
 #import "DataStructureTest.h"
 #import "GraphTest.h"
+#import "SearchTest.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSCache *imageCache;
@@ -42,13 +43,21 @@
 //    [self testBS];
 //    [self testLink];
 //    [self testData];
-    [self testGraph];
+//    [self testGraph];
+    [self testSearch];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - search
+-(void)testSearch
+{
+    SearchTest *search = [SearchTest new];
+    [search testSearch];
 }
 
 #pragma mark - graph
