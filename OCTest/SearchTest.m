@@ -57,8 +57,8 @@
 
 -(void)subsetsHelper:(NSMutableIndexSet *)indexSet result:(NSMutableArray *)result subset:(NSMutableArray *)subset startPoint:(NSInteger)start nums:(NSArray *)nums
 {
-    NSMutableArray *subsetCopy = [subset mutableCopyWithZone:nil];
-    NSMutableIndexSet *indexSetCopy = [indexSet mutableCopyWithZone:nil];
+    NSMutableArray *subsetCopy = [subset mutableCopy];//[subset mutableCopyWithZone:nil];
+    NSMutableIndexSet *indexSetCopy = [indexSet mutableCopy];//[indexSet mutableCopyWithZone:nil];
     
     [result addObject:subsetCopy];
     for (NSInteger i=start; i<nums.count; i++) {
@@ -70,7 +70,7 @@
         [subsetCopy addObject:nums[i]];
         [self subsetsHelper:indexSetCopy result:result subset:subsetCopy startPoint:i+1 nums:nums];//!!! copy important
         [indexSetCopy removeIndex:i];
-        [subsetCopy removeObjectAtIndex:subsetCopy.count-1]; //!!! can't remove object 
+        [subsetCopy removeObjectAtIndex:subsetCopy.count-1]; //!!! can't remove object
     }
 }
 

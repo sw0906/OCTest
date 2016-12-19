@@ -36,7 +36,7 @@
 //    [self testCommon];
 //    [self testDp];
 //    [self testDispatch];
-//    [self testTree];
+    [self testTree];
 //    [self testView];
 //    [self testFb];
 //    [self testString];
@@ -44,7 +44,7 @@
 //    [self testLink];
 //    [self testData];
 //    [self testGraph];
-    [self testSearch];
+//    [self testSearch];
     
 }
 

@@ -322,7 +322,7 @@
     left.left = leftl;
     left.right = leftr;
     leftl.left = leftll;
-    TreeNode *copyN = [root copyWithZone:NULL];
+    TreeNode *copyN = [root copy];//[root copyWithZone:NULL];
     
     if (copyN == root) {
         return;
