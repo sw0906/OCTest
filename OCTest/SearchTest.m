@@ -57,10 +57,15 @@
 
 -(void)subsetsHelper:(NSMutableIndexSet *)indexSet result:(NSMutableArray *)result subset:(NSMutableArray *)subset startPoint:(NSInteger)start nums:(NSArray *)nums
 {
-    NSMutableArray *subsetCopy = [subset mutableCopy];//[subset mutableCopyWithZone:nil];
-    NSMutableIndexSet *indexSetCopy = [indexSet mutableCopy];//[indexSet mutableCopyWithZone:nil];
+    NSMutableArray *subsetCopy = [subset mutableCopy];
+    NSMutableIndexSet *indexSetCopy = [indexSet mutableCopy];
     
     [result addObject:subsetCopy];
+    
+    if (subsetCopy.count == nums.count) {
+        return;
+    }
+    
     for (NSInteger i=start; i<nums.count; i++) {
         if (i>0 && (![indexSetCopy containsIndex:i-1]) && nums[i-1] == nums[i]) {
             continue;

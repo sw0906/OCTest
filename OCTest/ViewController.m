@@ -21,6 +21,7 @@
 #import "DataStructureTest.h"
 #import "GraphTest.h"
 #import "SearchTest.h"
+#import "ArrayNumberTest.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSCache *imageCache;
@@ -33,24 +34,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-//    [self testCommon];
+    [self testCommon];
 //    [self testDp];
 //    [self testDispatch];
     [self testTree];
 //    [self testView];
 //    [self testFb];
-//    [self testString];
-//    [self testBS];
+    [self testString];
+    [self testBS];
 //    [self testLink];
 //    [self testData];
 //    [self testGraph];
 //    [self testSearch];
+    [self testArrayNumber];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Array Number
+-(void)testArrayNumber
+{
+    ArrayNumberTest *test = [ArrayNumberTest new];
+    [test testArray];
 }
 
 #pragma mark - search

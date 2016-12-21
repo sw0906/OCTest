@@ -198,6 +198,8 @@
     NSString *str = re.isValid ? @"yes" : @"no";
     NSLog(@"%@", str);
 }
+
+
 -(ResultType *)isValidSearchTree:(TreeNode *)node
 {
     if (node == nil) {
@@ -332,6 +334,8 @@
     NSLog(@"%ld", node.val);
 }
 
+
+
 -(TreeNode *)findSameNode:(TreeNode *)r1 withR2:(TreeNode *)r2 withNode:(TreeNode *)n1
 {
     if (r1 == nil) {
@@ -342,10 +346,8 @@
         return r2;
     }
     
-    TreeNode *left, *right;
-    left = [self findSameNode:r1.left withR2:r2.left withNode:n1];
-    
-    right = [self findSameNode:r1.right withR2:r2.right withNode:n1];
+    TreeNode *left = [self findSameNode:r1.left withR2:r2.left withNode:n1];
+    TreeNode *right = [self findSameNode:r1.right withR2:r2.right withNode:n1];
     
     return left != nil ? left : right;
 }

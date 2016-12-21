@@ -15,15 +15,36 @@
 
 -(void)testCommon
 {
+    [self testString];
 }
 
 #pragma mark -
+- (void)commonString
+{
+    NSString *str;
+    NSInteger l = str.length;
+    
+    [str substringWithRange:NSMakeRange(0,2)];
+    char curC = [str characterAtIndex:2];
+    
+    [str substringToIndex:1];
+    [str substringFromIndex:2];
+    int maxV = MAX(INT_MIN, INT_MAX);
+    
+    NSString *newStr = [str stringByAppendingFormat:@"%c", [str characterAtIndex:2]];
+    //    Ο(1)＜Ο(log2n)＜Ο(n)＜Ο(nlog2n)＜Ο(n2)＜Ο(n3)＜…＜Ο(2n)＜Ο(n!)
+}
 
 
 -(void)testString
 {
     NSString *s = @"a b c d e";
-    NSString *array = [[NSArray alloc] componentsJoinedByString:s];
+    NSArray *arr =  @[@"aa", @"ab"];
+    NSString *array = [arr componentsJoinedByString:@" "];
+    NSArray *re = [s componentsSeparatedByString:@" "];
+    
+    NSString *s2 = @"abcde";
+    
     NSLog(@"%@", array.description);
 }
 

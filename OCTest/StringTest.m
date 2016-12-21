@@ -8,7 +8,12 @@
 
 #import "StringTest.h"
 
+
+
+
+
 @implementation StringTest
+
 
 -(void)testString
 {
@@ -16,7 +21,8 @@
 //    [self testRotate];
 //    [self testPermu];
 //    [self tesLongPali];
-    [self testCompareStr];
+//    [self testCompareStr];
+    [self testSort];
 }
 
 
@@ -98,6 +104,7 @@
         shortestLength = MIN(shortestLength, s.length);
     }
     
+    
     NSString *tmpS = array[0];
     for(NSInteger j=0; j<shortestLength; j++)
     {
@@ -118,41 +125,43 @@
 
 - (void)tesLongPali
 {
-    NSString *s1 = @"abcdzdcab";
-    [self longestPalindrome:s1];
+    NSString *s1 = @"abcdzdcabaaabbbaaa";
+    NSString *re = [self longestPalindrome:s1];
 }
 
 //Example
 //Given the string = "abcdzdcab", return "cdzdc".
 //string longestPalindrome(string& s) {
 
+//两头法
 -(NSString *)longestPalindrome:(NSString *)s
 {
     NSInteger maxCount = 0;
-    NSInteger po_start = 0, po_end = s.length-1;
+    NSInteger po_end = s.length-1;
+    NSString *result = [s substringToIndex:1];
     
-    for (NSInteger i=0; i<s.length; i++) {
+    for (NSInteger i=0; i<s.length-1; i++) {
         NSInteger backIndex = 0;
         while ([s characterAtIndex:i] != [s characterAtIndex:s.length-1-backIndex]) {
             backIndex++;
         }
-        po_start = i;
+        
         po_end = s.length - 1 - backIndex;
         
-        
         NSInteger start = i;
-        while ([s characterAtIndex:start] == [s characterAtIndex:s.length-1-backIndex]) {
+        while (start < s.length && backIndex < s.length &&[s characterAtIndex:start] == [s characterAtIndex:s.length-1-backIndex]) {
             start++;
             backIndex++;
         }
         if ( start >= s.length-1-backIndex ) {
-            maxCount = po_end - po_start + 1;
-            NSString *result = [s substringWithRange:NSMakeRange(po_start, maxCount)];
-            return result;
+            maxCount = po_end - i + 1;
+            if (maxCount > result.length) {
+                result = [s substringWithRange:NSMakeRange(i, maxCount)];
+            }
         }
         
     }
-    return [s substringToIndex:1];
+    return result;
 }
 
 
@@ -160,7 +169,7 @@
 
 -(void)testPermu
 {
-    NSString *str = @"abb";
+    NSString *str = @"abab";
     NSArray *re = [self stringPermutation2:str];
     NSLog(@"%ld", re.count);
 }
@@ -173,14 +182,12 @@
 - (NSArray *)stringPermutation2:(NSString *)str
 {
     NSMutableSet *result = [NSMutableSet new];
-    NSMutableSet<NSNumber *> *hash = [NSMutableSet new];
-    
-    [self permuHleper:[NSMutableString new] withStr:str withHash:hash withResult:result];
-    
+    NSMutableIndexSet *hash = [NSMutableIndexSet new];
+    [self permuHelper:[NSMutableString new] withStr:str withHash:hash withResult:result];
     return [result allObjects];
 }
 
--(void)permuHleper:(NSMutableString *)subStr withStr:(NSString *)str withHash:(NSMutableSet *)hash withResult:(NSMutableSet *)result
+-(void)permuHelper:(NSMutableString *)subStr withStr:(NSString *)str withHash:(NSMutableIndexSet *)hash withResult:(NSMutableSet *)result
 {
     if (subStr.length == str.length) {
         [result addObject:subStr];
@@ -188,12 +195,13 @@
     }
     
     for (int i = 0; i<str.length; i++) {
-        if (![hash containsObject:@(i)]) {
-            NSString *newStr = [subStr stringByAppendingFormat:@"%c", [str characterAtIndex:i]];
-            [hash addObject:@(i)];
-            [self permuHleper:[NSMutableString stringWithString:newStr] withStr:str withHash:hash withResult:result];
-            [hash removeObject:@(i)];
+        if ([hash containsIndex:i]) {
+            continue;
         }
+        NSString *newStr = [subStr stringByAppendingFormat:@"%c", [str characterAtIndex:i]];
+        [hash addIndex:i];
+        [self permuHelper:[NSMutableString stringWithString:newStr] withStr:str withHash:hash withResult:result];
+        [hash removeIndex:i];
     }
 }
 
@@ -201,7 +209,7 @@
 -(void)testSort
 {
     NSMutableString *str = [NSMutableString stringWithFormat:@"%@", @"abdddEESFsfBe"];
-    [self sortLetters:str];
+    [self sortLetters2:str];
 }
 
 
@@ -221,6 +229,35 @@
     NSLog(@"%@", letters);
 }
 
+- (void)sortLetters2:(NSMutableString *)letters
+{
+    NSInteger start = 0, end = letters.length -1;
+    while (start < end) {
+        while (![self isUppercase:letters index:start]) {
+            start++;
+        }
+        while ([self isUppercase:letters index:end]) {
+            end--;
+        }
+        
+        if (start < end) {
+            char startC = [letters characterAtIndex:start];
+            char endC = [letters characterAtIndex:end];
+            [letters replaceCharactersInRange:NSMakeRange(end, 1) withString:[NSString stringWithFormat:@"%c", startC]];
+            [letters replaceCharactersInRange:NSMakeRange(start, 1) withString:[NSString stringWithFormat:@"%c", endC]];
+            start++;
+            end--;
+        }
+    }
+}
+
+-(BOOL)isUppercase:(NSString *)str index:(NSInteger)i
+{
+    NSString *upper = [str uppercaseString];
+    return [upper characterAtIndex:i] == [str characterAtIndex:i] ? true : false;
+}
+
+
 #pragma mark - strStr
 
 - (void)testStr
@@ -230,8 +267,8 @@
     NSString *s1 = @"adbsdfsfsffee";
     NSString *t1 = @"bsd";
     BOOL v1 = [self strStr:s withTarget:t];
-    BOOL v2 = [self strStr:s1 withTarget:t1];
-    BOOL v3 = [self strStr:s withTarget:t1];
+    BOOL v2 = [self strStr2:s1 withTarget:t1];
+    BOOL v3 = [self strStr2:s withTarget:t1];
     NSLog(@"test");
 }
 
@@ -264,6 +301,33 @@
     }
     return  false;
 }
+
+- (BOOL)strStr2:(NSString *)source withTarget:(NSString *)target
+{
+    if (target.length > source.length) {
+        return false;
+    }
+    
+    for(int i=0; i<= source.length - target.length; i++)
+    {
+        NSInteger endIndex = i + target.length - 1;
+        if ([source characterAtIndex:i] == [target characterAtIndex:0] &&
+            [source characterAtIndex:endIndex] == [target characterAtIndex:(target.length-1)])
+        {
+            BOOL flag = true;
+            for (int j=i; j<=endIndex; j++) {
+                if ([source characterAtIndex:j] != [target characterAtIndex:j-i]) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                return true;
+            }
+        }
+    }
+    return  false;
+}
+
 
 #pragma mark - Rotate String
 -(void)testRotate

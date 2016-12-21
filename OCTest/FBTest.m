@@ -243,9 +243,11 @@
 - (NSInteger)getNonZeroNumbers:(NSArray *)array
 {
     NSInteger count = 0;
+    NSNumber *zero = @(0);
     for (NSNumber* n in array) {
-        if([n integerValue] != 0)
-            count++;
+        if (n != zero) {
+             count++;
+        }
     }
     return count;
 }

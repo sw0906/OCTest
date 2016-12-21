@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class NestedIterator;
+
 @interface NestedInteger : NSObject
 @property(nonatomic) NSInteger number;
 @property (nonatomic, strong) NSArray<NestedInteger *> *list;
@@ -15,7 +17,7 @@
 - (BOOL) isInteger;
 - (NSInteger) getInteger;
 - (NSArray<NestedInteger *> *) getList;
-
+//- (NestedIterator*) objectIterator;
 @end
 
 

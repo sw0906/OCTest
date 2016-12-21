@@ -27,7 +27,8 @@
 
 - (void)testBS
 {
-    [self testOccur];
+//    [self testOccur];
+    [self testMaxInMountain];
 }
 
 #pragma mark - Total Occurrence of Target
@@ -102,10 +103,10 @@
     NSArray *array1 = @[@(10),  @(12), @(14), @(8), @(6), @(3)];
     NSArray *array2 = @[@(10),  @(9), @(8), @(7), @(6), @(3)];
     NSArray *array3 = @[@(1),  @(4), @(5), @(7), @(8), @(3)];
-    [self mountainSequence:array];
-    [self mountainSequence:array1];
-    [self mountainSequence:array2];
-    [self mountainSequence:array3];
+    NSInteger re = [self mountainSequence:array];
+    re =[self mountainSequence:array1];
+    re =[self mountainSequence:array2];
+    re =[self mountainSequence:array3];
 }
 
 //Example
@@ -126,14 +127,11 @@
 - (NSInteger) mountainSequence:(NSArray<NSNumber *> *) nums withStart:(NSInteger)start withEnd:(NSInteger)end
 {
     if (end == start + 1) {
-        NSInteger result = [nums[start] integerValue] > [nums[end] integerValue] ? [nums[start] integerValue] : [nums[end] integerValue];
+        NSInteger result = nums[start] > nums[end] ? [nums[start] integerValue] : [nums[end] integerValue];
         return result;
     }
     NSInteger mid = (end - start)/2 + start;
-    NSInteger startV = [nums[start] integerValue];
-    NSInteger midV = [nums[mid] integerValue];
-//    NSInteger endV = [nums[end] integerValue];
-    if (startV > midV) {
+    if (nums[start] > nums[mid]) {
         return [self mountainSequence:nums withStart:start withEnd:mid];
     }
     else
