@@ -167,17 +167,10 @@
 				D05803231DE206A700FA5F7F /* FB */,
 				D05803101DD9FE7700FA5F7F /* Algorithm */,
 				D058030F1DD9FE3000FA5F7F /* Model */,
-				8413C0A51DD1BF1400CA2DC7 /* AppDelegate.m */,
-				8413C0A41DD1BF1400CA2DC7 /* AppDelegate.h */,
 				8413C0A71DD1BF1400CA2DC7 /* ViewController.h */,
 				8413C0A81DD1BF1400CA2DC7 /* ViewController.m */,
 				D02AB0E41DE83FCD001D78E5 /* TableViewController.h */,
 				D02AB0E51DE83FCD001D78E5 /* TableViewController.m */,
-				8413C0AA1DD1BF1400CA2DC7 /* Main.storyboard */,
-				8413C0B01DD1BF1400CA2DC7 /* Assets.xcassets */,
-				8413C0B21DD1BF1400CA2DC7 /* LaunchScreen.storyboard */,
-				8413C0B51DD1BF1400CA2DC7 /* Info.plist */,
-				8413C0AD1DD1BF1400CA2DC7 /* OCTest.xcdatamodeld */,
 				8413C0A11DD1BF1400CA2DC7 /* Supporting Files */,
 			);
 			path = OCTest;
@@ -186,6 +179,13 @@
 		8413C0A11DD1BF1400CA2DC7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8413C0A51DD1BF1400CA2DC7 /* AppDelegate.m */,
+				8413C0A41DD1BF1400CA2DC7 /* AppDelegate.h */,
+				8413C0AA1DD1BF1400CA2DC7 /* Main.storyboard */,
+				8413C0B01DD1BF1400CA2DC7 /* Assets.xcassets */,
+				8413C0B21DD1BF1400CA2DC7 /* LaunchScreen.storyboard */,
+				8413C0B51DD1BF1400CA2DC7 /* Info.plist */,
+				8413C0AD1DD1BF1400CA2DC7 /* OCTest.xcdatamodeld */,
 				8413C0A21DD1BF1400CA2DC7 /* main.m */,
 			);
 			name = "Supporting Files";

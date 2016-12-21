@@ -15,7 +15,8 @@
 
 -(void)testCommon
 {
-    [self testString];
+//    [self testString];
+    [self testMergeSort];
 }
 
 #pragma mark -
@@ -46,6 +47,53 @@
     NSString *s2 = @"abcde";
     
     NSLog(@"%@", array.description);
+}
+
+-(void)testMergeSort
+{
+    NSArray *n =  @[@(4), @(5), @(1), @(3), @(2)];
+    NSMutableArray *re =[self mergeSortHeler:n];
+}
+
+-(NSMutableArray *)mergeSortHeler:(NSArray *)nums
+{
+    if (nums.count == 1) {
+        return [nums mutableCopy];
+    }
+    NSInteger mid = nums.count/2;
+    NSMutableArray *left = [self mergeSortHeler:[nums subarrayWithRange:NSMakeRange(0, mid)]];
+    NSMutableArray *right = [self mergeSortHeler:[nums subarrayWithRange:NSMakeRange(mid, nums.count-mid)]];
+    return [self mergeWithArray1:left array2:right];
+}
+
+-(NSMutableArray *)mergeWithArray1:(NSMutableArray *)a1 array2:(NSMutableArray *)a2
+{
+    NSMutableArray *result = [NSMutableArray new];
+    NSInteger i1 = 0, i2 = 0, l1 = a1.count, l2 = a2.count;
+    while (i1<l1 && i2 < l2) {
+        if(a1[i1] > a2[i2]) {
+            [result addObject:a2[i2]];
+            i2++;
+        }
+        else
+        {
+            [result addObject:a1[i1]];
+            i1++;
+        }
+        
+    }
+    
+    while (i1 < l1) {
+        [result addObject:a1[i1]];
+        i1++;
+    }
+    
+    while (i2 < l2) {
+        [result addObject:a2[i2]];
+        i2++;
+    }
+
+    return result;
 }
 
 

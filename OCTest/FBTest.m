@@ -287,9 +287,29 @@
     NSMutableArray *muA = [array mutableCopy];
     [self removeDuplicate2:muA];
     
-    
+    NSString *words = @"abb abbd abb bdsf bbs dd bbs";
+    NSArray *ws = [words componentsSeparatedByString:@" "];
+    NSMutableArray *re = [ws mutableCopy];
+    [self removeDuWords:re];
     
     NSLog(@"%ld", [muA count]);
+}
+
+
+-(void)removeDuWords:(NSMutableArray *)array
+{
+    //sort
+    [array sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return obj1 < obj2 ? NSOrderedAscending : NSOrderedDescending;//从小到大
+    }];
+    
+    NSInteger i = 1;
+    while (i < [array count]) {
+        while (array[i-1] == array[i]) {
+            [array removeObjectAtIndex:i];//!!important
+        }
+        i++;
+    }
 }
 
 - (void)removeDuplicate:(NSMutableArray *)array

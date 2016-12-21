@@ -96,6 +96,7 @@
     return [[self alloc] init:num];
 }
 
+
 -(id)init :(NSInteger) val {
     if ( self = [super init] ) {
         self.val = val;

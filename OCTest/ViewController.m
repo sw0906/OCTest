@@ -39,7 +39,7 @@
 //    [self testDispatch];
     [self testTree];
 //    [self testView];
-//    [self testFb];
+    [self testFb];
     [self testString];
     [self testBS];
 //    [self testLink];
