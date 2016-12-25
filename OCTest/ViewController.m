@@ -35,7 +35,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self testCommon];
-//    [self testDp];
+    [self testDp];
 //    [self testDispatch];
     [self testTree];
 //    [self testView];
@@ -49,6 +49,10 @@
     [self testArrayNumber];
     
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

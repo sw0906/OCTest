@@ -24,8 +24,11 @@
 
 - (void)testDp
 {
-    [self testInterLeavingString];
+//    [self testInterLeavingString];
+    [self testlong222];
 }
+
+
 
 
 #pragma mark - Interleaving String
@@ -352,6 +355,59 @@
 //For [5, 4, 1, 2, 3], the LIS is [1, 2, 3], return 3
 //For [4, 2, 4, 5, 3, 7], the LIS is [2, 4, 5, 7], return 4
 //    int longestIncreasingSubsequence(vector<int> nums) {
+
+//-(void)test
+
+
+-(NSUInteger) longestSubsequence:(NSArray *)input{
+    NSUInteger maxValue = 0;
+    NSInteger lengthI = input.count;
+    NSInteger dp[lengthI];
+    dp[0] = 0;
+    for(NSInteger i=1; i<input.count; i++)
+    {
+        if([input[i] integerValue] -[input[i-1] integerValue]== 1)
+        {
+            dp[i] = dp[i-1]+1;
+            maxValue = MAX(dp[i], maxValue);
+        }
+        else
+        {
+            dp[i] = 0;
+        }
+    }
+    return maxValue;//dp[lengthI-1];
+}
+
+-(void)testlong222
+{
+    NSArray *array = @[@(1), @(2), @(3), @(5), @(7)];
+    NSInteger re =[self longestSubsequence2:array];
+}
+
+-(NSUInteger) longestSubsequence2:(NSArray *)input{
+    NSUInteger maxValue = 0;
+//    NSInteger lengthI = input.count;
+    // NSInteger dp[lengthI];
+    NSInteger startPoint = 0;
+//    dp[0] = 0;
+    for(NSInteger i=1; i<input.count; i++)
+    {
+        if([input[i] integerValue] - [input[i-1] integerValue] == 1)
+        {
+            // dp[i] = dp[i-1]+1;
+            NSInteger currentLength = i - startPoint + 1;
+            maxValue = MAX(currentLength, maxValue);
+        }
+        else
+        {
+            // dp[i] = 0;
+            startPoint = i;
+        }
+    }
+    return maxValue;
+}
+
 
 -(NSInteger) longestIncreasingSubsequence:(NSArray *)a
 {
