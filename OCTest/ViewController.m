@@ -45,7 +45,7 @@
 //    [self testLink];
 //    [self testData];
 //    [self testGraph];
-//    [self testSearch];
+    [self testSearch];
     [self testArrayNumber];
     
 }
