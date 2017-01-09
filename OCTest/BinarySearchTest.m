@@ -28,7 +28,8 @@
 - (void)testBS
 {
 //    [self testOccur];
-    [self testMaxInMountain];
+//    [self testMaxInMountain];
+    [self testPeak];
 }
 
 #pragma mark - Total Occurrence of Target
@@ -140,4 +141,61 @@
     }
 }
 
+#pragma mark - Find Peak Element
+//There is an integer array which has the following features:
+//
+//The numbers in adjacent positions are different.
+//A[0] < A[1] && A[A.length - 2] > A[A.length - 1].
+//We define a position P is a peek if:
+//
+//A[P] > A[P-1] && A[P] > A[P+1]
+//Find a peak element in this array. Return the index of the peak.
+//
+//Notice
+//
+//The array may contains multiple peeks, find any of them.
+//
+//Have you met this question in a real interview? Yes
+//Example
+//Given [1, 2, 1, 3, 4, 5, 7, 6]
+//
+//Return index 1 (which is number 2) or 6 (which is number 7)
+
+//int findPeak(vector<int> A) {
+
+
+- (void)testPeak
+{
+//    1, 2, 1, 3, 4, 5, 7, 6
+    NSArray *array = @[@(1),  @(2), @(1), @(3), @(7), @(6)];
+    NSArray *array1 = @[@(10),  @(12), @(14), @(8), @(6), @(3)];
+    NSArray *array2 = @[@(10),  @(9), @(8), @(7), @(6), @(3)];
+    NSArray *array3 = @[@(1),  @(4), @(5), @(7), @(8), @(3)];
+    NSInteger re = [[self findPeak:array] integerValue];
+    re =[self mountainSequence:array1];
+    re =[self mountainSequence:array2];
+    re =[self mountainSequence:array3];
+}
+
+- (NSNumber *)findPeak:(NSArray *)array
+{
+    return [self findPeakWithArray:array leftIndex:0 rightIndex:array.count-1];
+}
+
+- (NSNumber *)findPeakWithArray:(NSArray *)arr leftIndex:(NSInteger)l rightIndex:(NSInteger)r
+{
+    NSInteger mid = (r - l)/2 + l;
+    
+    if (r - l == 1) {
+        return arr[r] > arr[l] ? arr[r] : arr[l];
+    }
+    
+    if (arr[mid] > arr[mid + 1]) {
+        return [self findPeakWithArray:arr leftIndex:l rightIndex:mid];
+    }
+    else
+    {
+        return [self findPeakWithArray:arr leftIndex:mid rightIndex:r];
+    }
+}
 @end
