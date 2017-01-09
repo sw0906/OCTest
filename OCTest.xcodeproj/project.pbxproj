@@ -209,6 +209,16 @@
 			path = OCTestUITests;
 			sourceTree = "<group>";
 		};
+		8496988B1E23768A00F37D55 /* fb */ = {
+			isa = PBXGroup;
+			children = (
+				D02AB0E81DE86CE2001D78E5 /* FBTest.m */,
+				D05803191DDA00BB00FA5F7F /* CommonTest.m */,
+				D05803201DDD5F0000FA5F7F /* ViewTest.m */,
+			);
+			name = fb;
+			sourceTree = "<group>";
+		};
 		D058030F1DD9FE3000FA5F7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,11 +239,9 @@
 		D05803101DD9FE7700FA5F7F /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				8496988B1E23768A00F37D55 /* fb */,
 				D06D97431E0ACB0800638286 /* header */,
-				D05803201DDD5F0000FA5F7F /* ViewTest.m */,
-				D05803191DDA00BB00FA5F7F /* CommonTest.m */,
 				D075FEB81DFD568C0064E043 /* StringTest.m */,
-				D02AB0E81DE86CE2001D78E5 /* FBTest.m */,
 				842A7B071DD992B500A1729C /* DpTest.m */,
 				D058031C1DDA01A600FA5F7F /* LinkTest.m */,
 				D05803151DD9FF1F00FA5F7F /* TreeTest.m */,
