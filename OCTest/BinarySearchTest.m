@@ -31,7 +31,8 @@
 //    [self testMaxInMountain];
 //    [self testPeak];
 //    [self testBVersion];
-    [self testSRS];
+//    [self testSRS];
+    [self testSearchRange];
 }
 
 #pragma mark - Total Occurrence of Target
@@ -330,6 +331,75 @@ For [4, 5, 1, 2, 3] and target=0, return -1.
         {
             return [self searchRSAleft:l right:m target:t array:a];
         }
+    }
+}
+
+#pragma mark -  Search for a Range
+
+/*
+Given a sorted array of n integers, find the starting and ending position of a given target value.
+
+If the target is not found in the array, return [-1, -1].
+
+Have you met this question in a real interview? Yes
+Example
+Given [5, 7, 7, 8, 8, 10] and target value 8,
+return [3, 4].
+*/
+
+
+- (void)testSearchRange
+{
+    NSArray *arr = @[@(3), @(5), @(5), @(5), @(7)];
+    NSArray *re = [self searchRange:arr target:@(5)];
+    re = [self searchRange:arr target:@(3)];
+    re = [self searchRange:arr target:@(8)];
+}
+
+//vector<int> searchRange(vector<int> &A, int target) {
+- (NSArray *)searchRange:(NSArray *)a target:(NSNumber *)t
+{
+    NSMutableArray *re = [NSMutableArray new];
+    [re addObject:@(LONG_MAX)];
+    [re addObject:@(LONG_MIN)];
+    [self searchR_helper:a target:t left:0 right:a.count-1 re:re];
+    return [re copy];
+}
+
+- (void)searchR_helper:(NSArray *)a target:(NSNumber *)t left:(NSInteger)l right:(NSInteger)r re:(NSMutableArray *)re
+{
+    if (r == l + 1) {
+        if (a[l] == t) {
+            re[0] = @( MIN([re[0] integerValue], l) );
+            re[1] = @( MAX([re[1] integerValue], l) );
+            return;
+        }
+        if(a[r] == t)
+        {
+            re[0] = @( MIN([re[0] integerValue], r) );
+            re[1] = @( MAX([re[1] integerValue], r) );
+            return;
+        }
+        if (a[l] != t && a[r] != t)
+        {
+            re[0] = @(-1);
+            re[1] = @(-1);
+            return;
+        }
+    }
+    
+    NSInteger m = l + (r-l)/2;
+    if (t == a[m]) {
+        [self searchR_helper:a target:t left:m right:r re:re];
+        [self searchR_helper:a target:t left:l right:m re:re];
+    }
+    else if( t < a[m])
+    {
+        [self searchR_helper:a target:t left:l right:m re:re];
+    }
+    else
+    {
+        [self searchR_helper:a target:t left:m right:r re:re];
     }
 }
 
