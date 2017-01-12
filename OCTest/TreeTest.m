@@ -463,7 +463,53 @@ NSInteger (^traverseBlock2)(NSInteger) = ^(NSInteger input) {
 }
 
 
-
+//
+//#pragma mark -  Binary Tree Path Sum
+///*
+//Given a binary tree, find all paths that sum of the nodes in the path equals to a given number target.
+//
+//A valid path is from root node to any of the leaf nodes.
+//
+//Have you met this question in a real interview? Yes
+//Example
+//Given a binary tree, and target = 5:
+//
+//1
+/// \
+//2   4
+/// \
+//2   3
+//return
+//
+//[
+// [1, 2, 2],
+// [1, 4]
+// ]
+//*/
+////vector<vector<int>> binaryTreePathSum(TreeNode *root, int target) {
+//
+//- (NSMutableArray *)binaryTreePathSum:(TreeNode *)root target:t
+//{
+//    return [NSMutableArray new];
+//}
+//
+//- (void)binaryTreePathSumHelper:(NSMutableArray *)re subArray:(NSMutableArray *)sub target:(NSInteger)t treeNode:(TreeNode *)node
+//{
+//    if (!node)
+//        return;
+//    NSMutableArray *newSub = [sub mutableCopy];
+//    [newSub addObject:@(node.val)];
+//    NSInteger curV = [self getTotal:<#(NSArray *)#>]
+//}
+//
+//- (NSInteger)getTotalCount:(NSArray *)sub
+//{
+//    NSInteger count = 0;
+//    for (NSNumber *n in sub) {
+//        count += [n integerValue];
+//    }
+//    return count;
+//}
 
 
 #pragma mark - helper
