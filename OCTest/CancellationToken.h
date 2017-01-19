@@ -32,7 +32,7 @@
 //}
 
 
-NS_INLINE CancellationToken *cancellable_dispatch_after(dispatch_time_t time,
+CancellationToken *cancellable_dispatch_after(dispatch_time_t time,
                                                         dispatch_queue_t queue,
                                                         dispatch_block_t block)
 {
@@ -60,7 +60,7 @@ NS_INLINE CancellationToken *cancellable_dispatch_after(dispatch_time_t time,
 
 typedef void (^dispatch_cancel_block_t)(BOOL cancelled);
 
-NS_INLINE dispatch_cancel_block_t dispatch_async_if(dispatch_queue_t queue, void (^block)())
+dispatch_cancel_block_t dispatch_async_if(dispatch_queue_t queue, void (^block)())
 {
     __block BOOL execute = YES;
     

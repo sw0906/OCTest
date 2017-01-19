@@ -312,6 +312,8 @@
     }
 }
 
+
+//remove duplicata numbers
 - (void)removeDuplicate:(NSMutableArray *)array
 {
     //sort
@@ -349,7 +351,7 @@
 
 
 -(void)removeDu2:(NSMutableArray *)array
-{
+{    
     NSMutableSet *set = [NSMutableSet new];
     for(int i=0; i<[array count]; i++)
     {
