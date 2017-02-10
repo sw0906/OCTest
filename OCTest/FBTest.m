@@ -12,6 +12,10 @@
 
 - (void)testFb
 {
+//    [self testDu];
+//    [self testAnagram];
+//    [self testPhonePad];
+//    [self testArray];
     [self testDu];
 }
 
@@ -32,6 +36,8 @@
     for (int i=0; i<26; i++) {
         dic[i] = 0;
     }
+    
+    
     for(int i=0; i<[str length]; i++)
     {
         char c = [str characterAtIndex:i];
@@ -46,6 +52,7 @@
         while (count) {
             char c = 'a' + i;
             [newStr appendFormat:@"%c", c];
+//            [newStr appen]
             count--;
         }
     }
@@ -69,7 +76,7 @@
             dic[newS] = sub;
         }
     }
-    
+//    dic.allValues
     for (NSMutableArray *list in [dic allValues]) //!! allValues
     {
         [re addObject:list];
@@ -162,12 +169,10 @@
 }
 
 
--(NSArray *)getArraysWithInputs:(NSString *)str
+-(void)setupPhonePad:(NSMutableDictionary *)dicNum charDic:(NSMutableDictionary *)dicChar
 {
-    NSArray *counts = @[@0,@3,@3,@3,@3,@3,@4,@3,@4];
-    NSMutableDictionary *dicNum = [NSMutableDictionary new];//dicNum[1] = @"1,a,b,c"
-    NSMutableDictionary *dicChar = [NSMutableDictionary new];//dicChar[a] = 1
     
+    NSArray *counts = @[@0,@3,@3,@3,@3,@3,@4,@3,@4];
     //init dic
     char begin = 'a';
     for(int i=0; i<[counts count]; i++)
@@ -191,6 +196,31 @@
         dicChar[curNumber] = curNumber;
     }
     
+}
+
+
+
+//- (NSMutableArray *)getCharacterArraysWithStr:(NSString *)str dicNum:(NSMutableDictionary *)dicNum charDic:(NSMutableDictionary *)dicChar
+//{
+//    NSMutableArray *result = [NSMutableArray new];
+//    for (NSInteger i=0; i<str.length; i++) {
+//        char curC = [str characterAtIndex:i];
+//        NSString *curS = [NSString stringWithFormat:@"%c", curC];
+//        NSString *curN = dicChar[curS];
+//        NSArray *curA = dicNum[curN];
+//        [result addObject:curA];
+//    }
+//    return result;
+//}
+//
+
+//method 1
+-(NSArray *)getArraysWithInputs:(NSString *)str
+{
+    NSMutableDictionary *dicNum = [NSMutableDictionary new];//dicNum[1] = @"1,a,b,c"
+    NSMutableDictionary *dicChar = [NSMutableDictionary new];//dicChar[a] = 1
+   
+    [self setupPhonePad:dicNum charDic:dicChar];
     
     //result
     NSMutableArray *result = [NSMutableArray new];
@@ -233,7 +263,8 @@
 {
     NSArray *array = @[ @1, @0, @2, @0, @0, @3, @4];
     NSInteger number = [self getNonZeroNumbers:array];
-    [self moveZeroToEnd:[array mutableCopy]];
+    NSMutableArray *mutArray = [array mutableCopy];
+    [self moveZeroToEnd:mutArray];
     
     NSLog(@"%ld", number);
     
@@ -264,7 +295,7 @@
             i++;
         }
         
-        while (array[j] == 0 ) {
+        while ([array[j] integerValue] == 0 ) {
             j--;
         }
         
@@ -287,15 +318,29 @@
     NSMutableArray *muA = [array mutableCopy];
     [self removeDuplicate2:muA];
     
-    NSString *words = @"abb abbd abb bdsf bbs dd bbs";
+    NSString *words = @"abb abbd abb bdsf bbs dd bbs abb";
     NSArray *ws = [words componentsSeparatedByString:@" "];
     NSMutableArray *re = [ws mutableCopy];
-    [self removeDuWords:re];
+    [self removeDuWords2:re];
     
     NSLog(@"%ld", [muA count]);
 }
 
 
+-(void)removeDuWords2:(NSMutableArray *)array
+{
+    NSMutableSet *newArray = [NSMutableSet new];
+    for (NSInteger i = 0; i<array.count; i++) {
+        if ([newArray containsObject:array[i]]) {
+            [array removeObjectAtIndex:i];
+            i--;
+        }
+        [newArray addObject:array[i]];
+    }
+}
+
+
+//words 1
 -(void)removeDuWords:(NSMutableArray *)array
 {
     //sort
@@ -303,12 +348,13 @@
         return obj1 < obj2 ? NSOrderedAscending : NSOrderedDescending;//从小到大
     }];
     
-    NSInteger i = 1;
-    while (i < [array count]) {
-        while (array[i-1] == array[i]) {
-            [array removeObjectAtIndex:i];//!!important
+    
+    for (NSInteger i=1; i<array.count; i++) {
+        if([array[i] isEqualToString:array[i-1]])
+        {
+            [array removeObjectAtIndex:i-1];
+            i--;
         }
-        i++;
     }
 }
 
@@ -317,8 +363,11 @@
 - (void)removeDuplicate:(NSMutableArray *)array
 {
     //sort
+//    [array sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+//        return [(NSNumber *)obj1 integerValue] < [(NSNumber *)obj2 integerValue] ? NSOrderedAscending : NSOrderedDescending;//从小到大
+//    }];
     [array sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        return [(NSNumber *)obj1 integerValue] < [(NSNumber *)obj2 integerValue] ? NSOrderedAscending : NSOrderedDescending;//从小到大
+        return obj1 < obj2 ? NSOrderedAscending : NSOrderedDescending;//从小到大
     }];
     
 
@@ -333,12 +382,15 @@
 
 - (void)removeDuplicate2:(NSMutableArray *)array
 {
-    [array sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-        if ([(NSNumber *)obj1 integerValue] < [(NSNumber *)obj2 integerValue]) {
-            return NSOrderedAscending;
-        }
-        
-        return NSOrderedDescending;
+//    [array sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+//        if ([(NSNumber *)obj1 integerValue] < [(NSNumber *)obj2 integerValue]) {
+//            return NSOrderedAscending;
+//        }
+//        
+//        return NSOrderedDescending;
+//    }];
+    [array sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return obj1 < obj2 ? NSOrderedAscending : NSOrderedDescending;//从小到大
     }];
     
     for (NSInteger i=1; i<array.count; i++) {
@@ -415,6 +467,64 @@
     NSArray *reList = [[list reverseObjectEnumerator] allObjects];
     NSString *newString = [reList componentsJoinedByString:@" "];
     return newString;
+}
+
+
+
+
+
+
+
+
+// 2 5 1 2 3 - 1 2 3 - re: 3
+
+-(NSUInteger) longestSubsequence:(NSArray *)input{
+    NSUInteger maxValue = 0;
+    NSInteger lengthI = input.count;
+    NSInteger dp[lengthI];
+    dp[0] = 0;
+    for(NSInteger i=1; i<input.count; i++)
+    {
+        if([input[i] integerValue] -[input[i-1] integerValue]== 1)
+        {
+            dp[i] = dp[i-1]+1;
+            maxValue = MAX(dp[i], maxValue);
+        }
+        else
+        {
+            dp[i] = 0;
+        }
+    }
+    return maxValue;//dp[lengthI-1];
+}
+
+-(void)testlong222
+{
+    NSArray *array = @[@(1), @(2), @(3), @(5), @(7)];
+    NSInteger re =[self longestSubsequence2:array];
+}
+
+-(NSUInteger) longestSubsequence2:(NSArray *)input{
+    NSUInteger maxValue = 0;
+//    NSInteger lengthI = input.count;
+    // NSInteger dp[lengthI];
+    NSInteger startPoint = 0;
+//    dp[0] = 0;
+    for(NSInteger i=1; i<input.count; i++)
+    {
+        if([input[i] integerValue] - [input[i-1] integerValue] == 1)
+        {
+            // dp[i] = dp[i-1]+1;
+            NSInteger currentLength = i - startPoint + 1;
+            maxValue = MAX(currentLength, maxValue);
+        }
+        else
+        {
+            // dp[i] = 0;
+            startPoint = i;
+        }
+    }
+    return maxValue;
 }
 
 

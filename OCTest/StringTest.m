@@ -17,12 +17,12 @@
 
 -(void)testString
 {
-//    [self testStr];
+    [self testStr];
 //    [self testRotate];
 //    [self testPermu];
 //    [self tesLongPali];
 //    [self testCompareStr];
-    [self testSort];
+//    [self testSort];
 }
 
 
@@ -268,8 +268,8 @@
     NSString *s1 = @"adbsdfsfsffee";
     NSString *t1 = @"bsd";
     BOOL v1 = [self strStr:s withTarget:t];
-    BOOL v2 = [self strStr2:s1 withTarget:t1];
-    BOOL v3 = [self strStr2:s withTarget:t1];
+    BOOL v2 = [self strStr:s1 withTarget:t1];
+    BOOL v3 = [self strStr:s withTarget:t1];
     NSLog(@"test");
 }
 
@@ -277,7 +277,23 @@
 //If source = "source" and target = "target", return -1.
 //If source = "abcdabcdefg" and target = "bcd", return 1.
 
+
 - (BOOL)strStr:(NSString *)source withTarget:(NSString *)target
+{
+    if(target.length > source.length)
+        return false;
+    
+    NSInteger tLength = target.length;
+    for (int i=0; i<source.length - tLength; i++) {
+        NSString *subStr = [source substringWithRange:NSMakeRange(i, tLength)];
+        if ([subStr isEqualToString:target]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+- (BOOL)strStr1:(NSString *)source withTarget:(NSString *)target
 {
     if (target.length > source.length) {
         return false;
@@ -356,6 +372,7 @@
     NSString *subStr = [A substringFromIndex:(A.length - offset)];
     [A deleteCharactersInRange:NSMakeRange(A.length-offset, offset)];
     [A insertString:subStr atIndex:0];
+
     NSLog(@"%@", A);
 }
 

@@ -14,6 +14,7 @@
 
 -(void)cancel {
     self.cancelled = @YES;
+    
 }
 
 

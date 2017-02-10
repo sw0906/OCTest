@@ -10,7 +10,7 @@
 #import "OCNode.h"
 #import "DpTest.h"
 #import "CommonTest.h"
-#import "CancellationToken.h"
+//#import "CancellationToken.h"
 #import "TreeTest.h"
 #import "LinkTest.h"
 #import "ViewTest.h"
@@ -22,6 +22,7 @@
 #import "GraphTest.h"
 #import "SearchTest.h"
 #import "ArrayNumberTest.h"
+#import "JKChild.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSCache *imageCache;
@@ -32,6 +33,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+//    
+//    NSString * str = @"Hello";
+//    str = [str initWithString:@" World"];
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
     
     [self testCommon];
@@ -48,6 +56,8 @@
     [self testSearch];
     [self testArrayNumber];
     
+    
+    [self testKVO];
 }
 
 
@@ -153,71 +163,71 @@
 }
 
 
-
-#pragma mark - dispatch
--(void)testDispatch
-{
-    [self testDispatchBlock];
-    [self testDispatchToken];
-    [self testDispatch3];
-}
-
--(void)testDispatchBlock // block
-{
-    dispatch_cancel_block_t cancelBlock = dispatch_async_if(dispatch_get_main_queue(), ^{
-        NSLog(@"Block 1 executed");
-    });
-    
-    cancelBlock(YES);
-}
-
-- (void) testDispatchToken // token
-{
-    CancellationToken *token = cancellable_dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        NSLog(@"Here");
-    });
-    
-    [token cancel];
-}
-
-
-- (void)testDispatch3
-{
-    CancellationToken *t = [self cancellable_dispatch_after2:dispatch_time(DISPATCH_TIME_NOW,  2 * NSEC_PER_SEC) withQueue:dispatch_get_main_queue() withBlock:^{
-        NSLog(@"pass");
-    }];
-    t.cancelled = YES;
-    
-    
-    dispatch_cancel_block_t cancelBlock = [self cancellable_dispatch_after3:dispatch_time(DISPATCH_TIME_NOW,  2 * NSEC_PER_SEC) withQueue:dispatch_get_main_queue() withBlock:^{
-        NSLog(@"pass2");
-    }];
-
-}
-
-- (CancellationToken *) cancellable_dispatch_after2:(dispatch_time_t)t withQueue:(dispatch_queue_t)q withBlock:(dispatch_block_t)b
-{
-    CancellationToken *cancelState = [[CancellationToken alloc] init];
-    // the newBlock only runs after "when" and only if the cancelState bool value is set to false
-    dispatch_block_t newBlock = ^{
-        if ( cancelState.cancelled == NO)
-            b();
-    };
-    dispatch_after(t, q, newBlock);
-    return cancelState;
-}
-
-
--(dispatch_cancel_block_t)cancellable_dispatch_after3:(dispatch_time_t)t withQueue:(dispatch_queue_t)q withBlock:(dispatch_block_t)b
-{
-    dispatch_cancel_block_t cancelBlock = ^(BOOL isCancelled)
-    {
-        if (!isCancelled) {
-            b();
-        }
-    };
-    return cancelBlock;
-}
+//
+//#pragma mark - dispatch
+//-(void)testDispatch
+//{
+//    [self testDispatchBlock];
+//    [self testDispatchToken];
+//    [self testDispatch3];
+//}
+//
+//-(void)testDispatchBlock // block
+//{
+//    dispatch_cancel_block_t cancelBlock = dispatch_async_if(dispatch_get_main_queue(), ^{
+//        NSLog(@"Block 1 executed");
+//    });
+//    
+//    cancelBlock(YES);
+//}
+//
+//- (void) testDispatchToken // token
+//{
+//    CancellationToken *token = cancellable_dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//        NSLog(@"Here");
+//    });
+//    
+//    [token cancel];
+//}
+//
+//
+//- (void)testDispatch3
+//{
+//    CancellationToken *t = [self cancellable_dispatch_after2:dispatch_time(DISPATCH_TIME_NOW,  2 * NSEC_PER_SEC) withQueue:dispatch_get_main_queue() withBlock:^{
+//        NSLog(@"pass");
+//    }];
+//    t.cancelled = YES;
+//    
+//    
+//    dispatch_cancel_block_t cancelBlock = [self cancellable_dispatch_after3:dispatch_time(DISPATCH_TIME_NOW,  2 * NSEC_PER_SEC) withQueue:dispatch_get_main_queue() withBlock:^{
+//        NSLog(@"pass2");
+//    }];
+//
+//}
+//
+//- (CancellationToken *) cancellable_dispatch_after2:(dispatch_time_t)t withQueue:(dispatch_queue_t)q withBlock:(dispatch_block_t)b
+//{
+//    CancellationToken *cancelState = [[CancellationToken alloc] init];
+//    // the newBlock only runs after "when" and only if the cancelState bool value is set to false
+//    dispatch_block_t newBlock = ^{
+//        if ( cancelState.cancelled == NO)
+//            b();
+//    };
+//    dispatch_after(t, q, newBlock);
+//    return cancelState;
+//}
+//
+//
+//-(dispatch_cancel_block_t)cancellable_dispatch_after3:(dispatch_time_t)t withQueue:(dispatch_queue_t)q withBlock:(dispatch_block_t)b
+//{
+//    dispatch_cancel_block_t cancelBlock = ^(BOOL isCancelled)
+//    {
+//        if (!isCancelled) {
+//            b();
+//        }
+//    };
+//    return cancelBlock;
+//}
 
 #pragma mark - Operation queue
 
@@ -254,6 +264,14 @@
 
 
 
+
+#pragma mark - test KVO
+
+- (void)testKVO
+{
+    JKChild *child = [[JKChild alloc] init];
+    JKNurse *nurse = [JKNurse new];// [[JKNurse alloc] initWithChild:child];
+}
 @end
 
 //- (void)testDispatch3

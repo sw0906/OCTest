@@ -25,6 +25,7 @@
 		84C356E61E027A2E0048FD27 /* BinarySearchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C356E51E027A2E0048FD27 /* BinarySearchTest.m */; };
 		84D9AB001E07C442001C189F /* GraphTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9AAFF1E07C442001C189F /* GraphTest.m */; };
 		84D9AB031E07D250001C189F /* SearchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9AB021E07D250001C189F /* SearchTest.m */; };
+		D01BAB191E487E1F00947770 /* JKChild.m in Sources */ = {isa = PBXBuildFile; fileRef = D01BAB181E487E1F00947770 /* JKChild.m */; };
 		D02AB0E31DE83F11001D78E5 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D02AB0E21DE83F11001D78E5 /* CustomCell.m */; };
 		D02AB0E61DE83FCD001D78E5 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02AB0E51DE83FCD001D78E5 /* TableViewController.m */; };
 		D02AB0E91DE86CE2001D78E5 /* FBTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D02AB0E81DE86CE2001D78E5 /* FBTest.m */; };
@@ -86,6 +87,8 @@
 		84D9AAFF1E07C442001C189F /* GraphTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphTest.m; sourceTree = "<group>"; };
 		84D9AB011E07D250001C189F /* SearchTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTest.h; sourceTree = "<group>"; };
 		84D9AB021E07D250001C189F /* SearchTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTest.m; sourceTree = "<group>"; };
+		D01BAB171E487E1F00947770 /* JKChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKChild.h; sourceTree = "<group>"; };
+		D01BAB181E487E1F00947770 /* JKChild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKChild.m; sourceTree = "<group>"; };
 		D02AB0E11DE83F11001D78E5 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		D02AB0E21DE83F11001D78E5 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		D02AB0E41DE83FCD001D78E5 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 			children = (
 				D05803241DE206DB00FA5F7F /* CancellationToken.h */,
 				D05803251DE206DB00FA5F7F /* CancellationToken.m */,
+				D01BAB171E487E1F00947770 /* JKChild.h */,
+				D01BAB181E487E1F00947770 /* JKChild.m */,
 			);
 			name = FB;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				D07F35121E067EA900DF322A /* DataStructureTest.m in Sources */,
 				8413C0A91DD1BF1400CA2DC7 /* ViewController.m in Sources */,
 				842A7B081DD992B500A1729C /* DpTest.m in Sources */,
+				D01BAB191E487E1F00947770 /* JKChild.m in Sources */,
 				8413C0AF1DD1BF1400CA2DC7 /* OCTest.xcdatamodeld in Sources */,
 				D02AB0E91DE86CE2001D78E5 /* FBTest.m in Sources */,
 				8413C0A61DD1BF1400CA2DC7 /* AppDelegate.m in Sources */,
@@ -580,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OCTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sw.OCTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -591,6 +598,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OCTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sw.OCTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";

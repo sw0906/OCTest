@@ -58,6 +58,8 @@
                              }
                              return NSOrderedAscending;
                          }];
+    
+    
     [self permuteUniqueWithNums:[sortNums mutableCopy] subArray:subArray subIndex:subIndex result:resulut];
     return resulut;
 }
@@ -75,6 +77,7 @@
     {
         if([subIndex containsObject:[NSNumber numberWithInteger:i]])
             continue;
+        
         if(i>0 && nums[i-1] == nums[i] && [subIndex containsObject:[NSNumber numberWithInteger:i-1]])
             continue;
         

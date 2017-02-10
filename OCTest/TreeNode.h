@@ -18,7 +18,7 @@
 
 @interface DuLinkNode: NSObject
 + (id) linkNodeWithVal:(NSInteger)num;
-@property (nonatomic) NSInteger val;
+@property (nonatomic, assign) NSInteger val;
 @property (nonatomic, strong) DuLinkNode *next;
 @property (nonatomic, strong) DuLinkNode *prev;
 @end

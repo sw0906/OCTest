@@ -25,7 +25,8 @@
 - (void)testDp
 {
 //    [self testInterLeavingString];
-    [self testlong222];
+//    [self testlong222];
+    [self testLongCommonSub];
 }
 
 
@@ -136,7 +137,7 @@
 #pragma mark - Longest Common Substring
 - (void)testLongCommonSub
 {
-    NSString *a =  @"abcdefgg";
+    NSString *a =  @"ssbcd";//@"abcdefgg";
     NSString *b = @"cbcdefdd";
     NSInteger re = [self longestCommonSubstring:a withB:b];
     NSLog(@"%ld", re);
@@ -148,6 +149,41 @@
 // int longestCommonSubstring(string &A, string &B) {
 
 - (NSInteger)longestCommonSubstring:(NSString *)a withB:(NSString *)b
+{
+    if (a.length == 0 || b.length == 0) {
+        return 0;
+    }
+    
+    //state
+    NSInteger dp[a.length+1][b.length+1];
+    
+    //init
+    for(int i=0; i<=a.length; i++)
+    {
+        for (int j=0; j<=b.length; j++) {
+            dp[i][j] = 0;
+        }
+    }
+    
+    NSInteger maxV = 0;
+    
+    //dp
+    for (int i=1; i<=a.length; i++) {
+        for (int j=1; j<=b.length; j++) {
+            if ([a characterAtIndex:i-1] == [b characterAtIndex:j-1]) {
+                dp[i][j] = dp[i-1][j-1] + 1;
+                maxV = MAX(dp[i][j], maxV);
+            }else
+            {
+                dp[i][j] = 0;
+            }
+            
+        }
+    }
+    return maxV;
+}
+
+- (NSInteger)longestCommonSubstring1:(NSString *)a withB:(NSString *)b
 {
     if (a.length == 0 || b.length == 0) {
         return 0;
@@ -359,53 +395,11 @@
 //-(void)test
 
 
--(NSUInteger) longestSubsequence:(NSArray *)input{
-    NSUInteger maxValue = 0;
-    NSInteger lengthI = input.count;
-    NSInteger dp[lengthI];
-    dp[0] = 0;
-    for(NSInteger i=1; i<input.count; i++)
-    {
-        if([input[i] integerValue] -[input[i-1] integerValue]== 1)
-        {
-            dp[i] = dp[i-1]+1;
-            maxValue = MAX(dp[i], maxValue);
-        }
-        else
-        {
-            dp[i] = 0;
-        }
-    }
-    return maxValue;//dp[lengthI-1];
-}
 
 -(void)testlong222
 {
     NSArray *array = @[@(1), @(2), @(3), @(5), @(7)];
-    NSInteger re =[self longestSubsequence2:array];
-}
-
--(NSUInteger) longestSubsequence2:(NSArray *)input{
-    NSUInteger maxValue = 0;
-//    NSInteger lengthI = input.count;
-    // NSInteger dp[lengthI];
-    NSInteger startPoint = 0;
-//    dp[0] = 0;
-    for(NSInteger i=1; i<input.count; i++)
-    {
-        if([input[i] integerValue] - [input[i-1] integerValue] == 1)
-        {
-            // dp[i] = dp[i-1]+1;
-            NSInteger currentLength = i - startPoint + 1;
-            maxValue = MAX(currentLength, maxValue);
-        }
-        else
-        {
-            // dp[i] = 0;
-            startPoint = i;
-        }
-    }
-    return maxValue;
+    NSInteger re =[self longestIncreasingSubsequence:array];
 }
 
 

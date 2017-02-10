@@ -85,8 +85,8 @@
             
             if(image)
             {
-                //update
-                dispatch_async(dispatch_get_main_queue(), ^{
+                //update - 一般用dispatch_sync，不用dispatch_async
+                dispatch_sync(dispatch_get_main_queue(), ^{
                     CustomCell *cell =(CustomCell*)[self.tableView cellForRowAtIndexPath:indexPath];
                     if(cell)
                     {
@@ -100,6 +100,7 @@
     }
     
     cell.textLabel.text = [dict objectForKey:@"Name"];
+//    [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"iden"];
     
     return cell;
 }

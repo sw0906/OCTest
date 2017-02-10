@@ -56,6 +56,7 @@
     {
         _indexFlag = 0;
         _list = [[NSMutableArray<NestedInteger*> alloc] init];
+        
         [self flatenNestedArray:list];
     }
     return self;

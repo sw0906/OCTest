@@ -49,6 +49,16 @@ CancellationToken *cancellable_dispatch_after(dispatch_time_t time,
 }
 
 
+//- (void)callMyBlock:(void (^)(void))callbackBlock;
+//If you wanted the block to be given some data you can change the signature to include them:
+//
+//- (void)callMyBlock:(void (^)(double, double))block {
+//    ...
+//    block(3.0, 2.0);
+//}
+
+
+
 //solution 2
 //BOOL (^isInputEven)(int) = ^(int input) {
 //    if (input % 2 == 0) {

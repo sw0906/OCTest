@@ -55,8 +55,10 @@
 
 -(void)testTree
 {
-    [self testCopy];
+//    [self testCopy];
 //    [self testBSTtoLinkNode];
+//    [self testListToTree];
+    [self testValid];
 }
 
 
@@ -152,7 +154,9 @@
     
     [sub addObject:@(root.val)];
     NSInteger curValue = [self getTotal:sub];
-    if (curValue == target) {
+    
+    if (curValue == target)
+    {
         [result addObject:sub];
     }
     else if(curValue < target)
@@ -188,17 +192,16 @@
     TreeNode *leftll = [[TreeNode alloc] init:1];
     root.left = left;
     root.right = right;
-    left.left = leftll;
+    left.left = leftl;
     left.right = leftr;
-    leftll.left = leftl;
+    leftl.left = leftll;
     
     TreeNode *root2 = [self getSampleTree];
     
-    ResultType *re = [self isValidSearchTree:root2];
+    ResultType *re = [self isValidSearchTree:root];
     NSString *str = re.isValid ? @"yes" : @"no";
     NSLog(@"%@", str);
 }
-
 
 -(ResultType *)isValidSearchTree:(TreeNode *)node
 {
@@ -208,6 +211,29 @@
     
     ResultType *left = [self isValidSearchTree: node.left];
     ResultType *right = [self isValidSearchTree: node.right];
+    if (!left.isValid || !right.isValid) {
+        return [[ResultType alloc] initNotValid];
+    }
+    
+    NSInteger val = node.val;
+    if (  left.maxV > val || right.minV < val ) //！！！node.left一起判断
+    {
+        return [[ResultType alloc] initNotValid];
+    }
+    
+    return [[ResultType alloc] initWithMax:right.maxV withMin:left.minV withRoot:node];
+}
+
+
+//
+-(ResultType *)isValidSearchTree1:(TreeNode *)node
+{
+    if (node == nil) {
+        return [[ResultType alloc] init];
+    }
+    
+    ResultType *left = [self isValidSearchTree1: node.left];
+    ResultType *right = [self isValidSearchTree1: node.right];
     if (!left.isValid || !right.isValid) {
         return [[ResultType alloc] initNotValid];
     }
@@ -443,6 +469,38 @@ NSInteger (^traverseBlock2)(NSInteger) = ^(NSInteger input) {
     
     //left
     TreeNode *left = nil;
+//    if (mid > 0)
+    {
+        NSRange leftR = NSMakeRange(0, mid);
+        left = [self listToInorderTree:[list subarrayWithRange:leftR]];
+    }
+    
+    //right
+    TreeNode *right = nil;
+//    if ( mid+1 < length)
+    {
+        NSRange rightR = NSMakeRange(mid+1, length-mid-1);
+        right = [self listToInorderTree:[list subarrayWithRange:rightR]];
+    }
+    
+    TreeNode *root = [[TreeNode alloc] init:[list[mid] integerValue]];
+    root.left = left;
+    root.right = right;
+    return root;
+}
+
+
+-(TreeNode *)listToInorderTree1:(NSArray *)list
+{
+    NSInteger length = [list count];
+    if (!length) {
+        return nil;
+    }
+    
+    NSInteger mid = length/2;
+    
+    //left
+    TreeNode *left = nil;
     if (mid > 0)
     {
         NSRange leftR = NSMakeRange(0, mid);
@@ -516,16 +574,16 @@ NSInteger (^traverseBlock2)(NSInteger) = ^(NSInteger input) {
 -(TreeNode *)getSampleTree
 {
     TreeNode *root = [[TreeNode alloc] init:5];
-    TreeNode *left = [[TreeNode alloc] init:3];
-    TreeNode *right = [[TreeNode alloc] init:7];
-    TreeNode *leftl = [[TreeNode alloc] init:2];
-    TreeNode *leftr = [[TreeNode alloc] init:4];
-    TreeNode *leftll = [[TreeNode alloc] init:1];
-    root.left = left;
-    root.right = right;
-    left.left = leftl;
-    left.right = leftr;
-    leftl.left = leftll;
+//    TreeNode *left = [[TreeNode alloc] init:3];
+//    TreeNode *right = [[TreeNode alloc] init:7];
+//    TreeNode *leftl = [[TreeNode alloc] init:2];
+//    TreeNode *leftr = [[TreeNode alloc] init:4];
+//    TreeNode *leftll = [[TreeNode alloc] init:1];
+//    root.left = left;
+//    root.right = right;
+//    left.left = leftl;
+//    left.right = leftr;
+//    leftl.left = leftll;
     return root;
 }
 
