@@ -1,3 +1,4 @@
+
 //
 //  LinkTest.m
 //  OCTest
@@ -12,10 +13,97 @@
 
 -(void)testLink
 {
-    [self testSwap];
+//    [self testSwap];
+    [self testSwapTwoPari];
 }
 
 
+
+
+- (void)testing
+{
+    NSArray *strArray = @[@"lint", @"intl", @"tl", @"code", @"itnl", @"deco", @"decc"];
+    
+    //nums
+    NSArray *nums = @[@2, @1, @0, @2, @0, @0, @3, @4];
+    
+    
+    //like node
+    LinkNode *node = [self getSampleNodeList];
+    
+    //number pad
+    NSString *str4 = @"926";
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark - fb - each pair of nodes swapped.
+/*
+Return the head node of the singly linked list with each pair of nodes swapped. If there is a last odd node leave it in place.
+
+Example:
+Input: 1 -> 2 -> 3 -> 4 -> 5
+Output: 2 -> 1 -> 4 -> 3 -> 5
+*/
+
+- (void)testSwapTwoPari
+{
+    LinkNode *node = [self getSampleNodeList];
+    LinkNode *newNode = [self swapPariOfNode:node];
+    [self listingNode:newNode];
+}
+
+- (LinkNode *)swapPariOfNode:(LinkNode *)node
+{
+    //set result
+    LinkNode *beginNode;
+    if (node.next) {
+        beginNode = node.next;
+    }
+    else
+    {
+        return node;
+    }
+    
+    //init
+    LinkNode *preNode = [LinkNode new];
+    preNode.next = node;
+    [self  swapNextTwoNode:preNode];
+    
+    return beginNode;
+}
+
+- (void)swapNextTwoNode:(LinkNode *)node
+{
+    if (!node || !node.next || !node.next.next) {
+        return;
+    }
+    
+    LinkNode *n1 = node.next;
+    LinkNode *n2 = node.next.next;
+    LinkNode *n2Next = n2.next;
+    
+    node.next = n2;
+    n2.next = n1;
+    n1.next = n2Next;
+    
+    if (n1) {
+        [self swapNextTwoNode:n1];
+    }
+}
 
 
 #pragma mark - Swap Two Nodes in Linked List
@@ -161,7 +249,15 @@
     NSLog(@"re is %ld", newHead.val);
 }
 
-#pragma mark - 
+#pragma mark - Helper
+- (void)listingNode:(LinkNode *)node
+{
+    while (node) {
+        NSLog(@"number is %ld", node.val);
+        node = node.next;
+    }
+}
+
 -(LinkNode *)getSampleNodeList
 {
     LinkNode *n1 = [LinkNode linkNodeWithVal:1];//[[LinkNode alloc] init:1];

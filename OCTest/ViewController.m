@@ -50,7 +50,7 @@
     [self testFb];
     [self testString];
     [self testBS];
-//    [self testLink];
+    [self testLink];
 //    [self testData];
 //    [self testGraph];
     [self testSearch];
@@ -58,10 +58,24 @@
     
     
     [self testKVO];
+    
+    [self testCopy];
 }
 
 
-
+- (void)testCopy
+{
+    NSNumber *n = [NSNumber numberWithInteger:10];
+    NSNumber *b = [n copy];
+    n = @(2);
+    if (n == b) {
+        NSLog(@"same");
+    }
+    
+    if (n.integerValue == b.integerValue) {
+        NSLog(@"same 2");
+    }
+}
 
 
 - (void)didReceiveMemoryWarning {

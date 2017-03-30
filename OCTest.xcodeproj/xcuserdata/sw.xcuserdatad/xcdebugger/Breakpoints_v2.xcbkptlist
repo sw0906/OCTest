@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
             landmarkName = "-isValidSearchTree1:"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "485"
+            endingLineNumber = "485"
             landmarkName = "-moveZeroToEnd:"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
             landmarkName = "-testArray"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/ViewController.m"
-            timestampString = "508153145.283885"
+            timestampString = "508679814.470177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "-testData"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
+            startingLineNumber = "483"
+            endingLineNumber = "483"
             landmarkName = "-moveZeroToEnd:"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
+            startingLineNumber = "501"
+            endingLineNumber = "501"
             landmarkName = "-testDu"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "-getArraysWithInputs:"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "-getArraysWithInputs:"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "-getArraysWithInputs:"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "-getArraysWithInputs:"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "-getArraysWithInputs:"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507835168.363835"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "417"
-            endingLineNumber = "417"
+            startingLineNumber = "592"
+            endingLineNumber = "592"
             landmarkName = "-removeDu2:"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507835168.363835"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
+            startingLineNumber = "584"
+            endingLineNumber = "584"
             landmarkName = "-removeDu2:"
             landmarkType = "7">
          </BreakpointContent>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507835168.363835"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
+            startingLineNumber = "589"
+            endingLineNumber = "589"
             landmarkName = "-removeDu2:"
             landmarkType = "7">
          </BreakpointContent>
@@ -358,15 +358,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "@implementation TreeTest"
             landmarkType = "3">
          </BreakpointContent>
@@ -378,11 +378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "@implementation TreeTest"
             landmarkType = "3">
          </BreakpointContent>
@@ -394,27 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "@implementation TreeTest"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "-binaryTreePathSum:withTarget:"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "@implementation TreeTest"
             landmarkType = "3">
          </BreakpointContent>
@@ -442,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "@implementation TreeTest"
             landmarkType = "3">
          </BreakpointContent>
@@ -474,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-testAnagram"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,43 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-getAnagramChcecker:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-getAnagramChcecker:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "-getAnagramChcecker:"
             landmarkType = "7">
          </BreakpointContent>
@@ -538,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
+            startingLineNumber = "354"
+            endingLineNumber = "354"
             landmarkName = "-heightOfTree:"
             landmarkType = "7">
          </BreakpointContent>
@@ -554,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
             landmarkName = "@implementation TreeTest"
             landmarkType = "3">
          </BreakpointContent>
@@ -570,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
+            startingLineNumber = "364"
+            endingLineNumber = "364"
             landmarkName = "-heightOfTree:"
             landmarkType = "7">
          </BreakpointContent>
@@ -586,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
             landmarkName = "-heightOfTree:"
             landmarkType = "7">
             <Locations>
@@ -602,11 +554,11 @@
                   moduleName = "OCTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sw/Documents/OCTest/OCTest/TreeTest.m"
-                  timestampString = "508153146.607577"
+                  timestampString = "508698594.001621"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "293"
-                  endingLineNumber = "293"
+                  startingLineNumber = "370"
+                  endingLineNumber = "370"
                   offsetFromSymbolStart = "331">
                </Location>
                <Location
@@ -617,11 +569,11 @@
                   moduleName = "OCTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sw/Documents/OCTest/OCTest/TreeTest.m"
-                  timestampString = "508153146.609235"
+                  timestampString = "508698594.003174"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "293"
-                  endingLineNumber = "293"
+                  startingLineNumber = "370"
+                  endingLineNumber = "370"
                   offsetFromSymbolStart = "403">
                </Location>
             </Locations>
@@ -634,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
             landmarkName = "-heightOfTree:"
             landmarkType = "7">
             <Locations>
@@ -650,11 +602,11 @@
                   moduleName = "OCTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sw/Documents/OCTest/OCTest/TreeTest.m"
-                  timestampString = "508153146.612557"
+                  timestampString = "508698594.006699"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "293"
-                  endingLineNumber = "293"
+                  startingLineNumber = "370"
+                  endingLineNumber = "370"
                   offsetFromSymbolStart = "331">
                </Location>
                <Location
@@ -665,11 +617,11 @@
                   moduleName = "OCTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sw/Documents/OCTest/OCTest/TreeTest.m"
-                  timestampString = "508153146.614146"
+                  timestampString = "508698594.008433"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "293"
-                  endingLineNumber = "293"
+                  startingLineNumber = "370"
+                  endingLineNumber = "370"
                   offsetFromSymbolStart = "403">
                </Location>
             </Locations>
@@ -682,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
             landmarkName = "-heightOfTree:"
             landmarkType = "7">
          </BreakpointContent>
@@ -698,11 +650,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507835168.363835"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "458"
-            endingLineNumber = "458"
+            startingLineNumber = "633"
+            endingLineNumber = "633"
             landmarkName = "-reverseSentence:"
             landmarkType = "7">
          </BreakpointContent>
@@ -714,11 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507835168.363835"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "467"
-            endingLineNumber = "467"
+            startingLineNumber = "642"
+            endingLineNumber = "642"
             landmarkName = "-reverseSentence2:"
             landmarkType = "7">
          </BreakpointContent>
@@ -826,7 +778,7 @@
                   moduleName = "OCTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sw/Documents/OCTest/OCTest/StringTest.m"
-                  timestampString = "508153146.637271"
+                  timestampString = "508698594.030002"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "119"
@@ -841,7 +793,7 @@
                   moduleName = "OCTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sw/Documents/OCTest/OCTest/StringTest.m"
-                  timestampString = "508153146.639015"
+                  timestampString = "508698594.031559"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "119"
@@ -874,11 +826,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "-testBSTtoLinkNode"
             landmarkType = "7">
          </BreakpointContent>
@@ -890,11 +842,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "-bstToDoublyList:"
             landmarkType = "7">
          </BreakpointContent>
@@ -970,11 +922,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
+            startingLineNumber = "503"
+            endingLineNumber = "503"
             landmarkName = "@implementation FBTest"
             landmarkType = "3">
          </BreakpointContent>
@@ -986,11 +938,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/ViewController.m"
-            timestampString = "508153145.283885"
+            timestampString = "508679814.470177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "@implementation ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1002,11 +954,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/ViewController.m"
-            timestampString = "508153145.283885"
+            timestampString = "508679814.470177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "@implementation ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1018,11 +970,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/ViewController.m"
-            timestampString = "508153145.283885"
+            timestampString = "508679814.470177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "@implementation ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1034,11 +986,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/LinkTest.m"
-            timestampString = "503723573.092972"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "-findNodePre:withV:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1050,11 +1002,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/LinkTest.m"
-            timestampString = "503723667.717108"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "-findNodePre:withV:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1066,11 +1018,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/LinkTest.m"
-            timestampString = "503723667.717108"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "-findNodePre:withV:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1082,11 +1034,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/LinkTest.m"
-            timestampString = "503723613.22426"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "-swapNodes:withV1:withV2:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1098,11 +1050,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/LinkTest.m"
-            timestampString = "503723632.156235"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-swapNodes:withV1:withV2:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1114,11 +1066,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/LinkTest.m"
-            timestampString = "503723646.651467"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-findNodePre:withV:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1514,11 +1466,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-testStoNum"
             landmarkType = "7">
          </BreakpointContent>
@@ -1530,11 +1482,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/ViewController.m"
-            timestampString = "508153145.283885"
+            timestampString = "508679814.470177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "@implementation ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1546,11 +1498,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834414.528974"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "@implementation FBTest"
             landmarkType = "3">
          </BreakpointContent>
@@ -1562,11 +1514,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834802.451455"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
+            startingLineNumber = "507"
+            endingLineNumber = "507"
             landmarkName = "-removeDuWords2:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1578,11 +1530,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/FBTest.m"
-            timestampString = "507834938.812123"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "496"
+            endingLineNumber = "496"
             landmarkName = "-testDu"
             landmarkType = "7">
          </BreakpointContent>
@@ -1594,13 +1546,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "516"
-            endingLineNumber = "516"
-            landmarkName = "-listToInorderTree1:"
-            landmarkType = "7">
+            startingLineNumber = "593"
+            endingLineNumber = "593"
+            landmarkName = "@implementation TreeTest"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1610,11 +1562,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "458"
-            endingLineNumber = "458"
+            startingLineNumber = "535"
+            endingLineNumber = "535"
             landmarkName = "-testListToTree"
             landmarkType = "7">
          </BreakpointContent>
@@ -1626,11 +1578,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "475"
-            endingLineNumber = "475"
+            startingLineNumber = "552"
+            endingLineNumber = "552"
             landmarkName = "-listToInorderTree:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1642,13 +1594,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899306.830621"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "483"
-            endingLineNumber = "483"
-            landmarkName = "-listToInorderTree:"
-            landmarkType = "7">
+            startingLineNumber = "560"
+            endingLineNumber = "560"
+            landmarkName = "@implementation TreeTest"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1658,11 +1610,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899303.428274"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
             landmarkName = "-testValid"
             landmarkType = "7">
          </BreakpointContent>
@@ -1674,11 +1626,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899324.876257"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "-isValidSearchTree:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1690,11 +1642,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899347.255461"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "-isValidSearchTree:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1706,11 +1658,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/TreeTest.m"
-            timestampString = "507899348.930694"
+            timestampString = "508698592.764521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "-isValidSearchTree:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1750,7 +1702,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/JKChild.m"
@@ -1782,7 +1734,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/ViewController.m"
@@ -1798,16 +1750,368 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "-getArraysWithInputs:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
+            landmarkName = "-combinationString:index:subArray:padArr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "359"
+            endingLineNumber = "359"
+            landmarkName = "-combinationString:index:subArray:padArr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
+            landmarkName = "-combinationString:index:subArray:padArr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "355"
+            endingLineNumber = "355"
+            landmarkName = "-combinationString:index:subArray:padArr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "-testCombinationPadString"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
+            landmarkName = "-combinationString:index:subArray:padArr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "-testCombinationPadString"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "331"
+            endingLineNumber = "331"
+            landmarkName = "-getArraysWithInputs2:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
+            landmarkName = "-combinationString:index:subArray:padArr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
+            landmarkName = "-getArraysWithInputs2:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
+            landmarkName = "-testCombinationPadString"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
+            landmarkName = "-combinationString2:index:subArray:padArr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
+            landmarkName = "-combinationString2:index:subArray:padArr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
+            landmarkName = "-combinationString2:index:subArray:padArr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
+            landmarkName = "-stringToList:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
+            landmarkName = "-stringToList:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
+            landmarkName = "-stringToList:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "408"
+            endingLineNumber = "408"
+            landmarkName = "-combinationString2:index:subArray:padArr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
+            landmarkName = "-testCombinationPadString"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCTest/ViewController.m"
-            timestampString = "508153155.543828"
+            timestampString = "508679814.470177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-testCopy"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/FBTest.m"
+            timestampString = "508698592.764521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "-getAnagramChcecker:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCTest/TreeTest.m"
+            timestampString = "508698583.530521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "-testBTSum"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

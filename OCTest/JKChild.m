@@ -30,7 +30,7 @@
     
     //方式二：
     _happyVal--;      //直接修改不会触发监听，还需通过KVC方式设置
-    [self setValue:[NSNumber numberWithInteger:_happyVal] forKey:@"happyVal"];
+//    [self setValue:[NSNumber numberWithInteger:_happyVal] forKey:@"happyVal"];
 }
 
 

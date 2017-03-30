@@ -25,7 +25,9 @@
     self.queue = [NSOperationQueue new];
     self.imageCache = [NSCache new];
     self.imageCache.countLimit = 100;
+
     
+//    self.users = [self getUsers];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,6 +46,9 @@
 #warning Incomplete implementation, return the number of rows
     return 0;
 }
+
+
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

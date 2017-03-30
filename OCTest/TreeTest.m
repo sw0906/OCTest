@@ -59,7 +59,47 @@
 //    [self testBSTtoLinkNode];
 //    [self testListToTree];
     [self testValid];
+    [self testBTSum];
+    [self testing];
 }
+
+
+
+
+
+- (void)testing
+{
+    NSArray *strArray = @[@"lint", @"intl", @"tl", @"code", @"itnl", @"deco", @"decc"];
+    
+    //nums
+    NSArray *nums = @[@2, @1, @0, @2, @0, @0, @3, @4];
+    
+    
+    //tree
+    TreeNode *root = [self getSampleTree];
+    
+    
+    //number pad
+    NSString *str4 = @"926";
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #pragma mark - Convert Binary Search Tree to Doubly Linked List
@@ -137,17 +177,54 @@
 // [1, 4]
 // ]
 
+
 //    vector<vector<int>> binaryTreePathSum(TreeNode *root, int target) {
+
+//solution 2
 -(NSArray *)binaryTreePathSum:(TreeNode *)root withTarget:(NSInteger) target
 {
     NSMutableArray *result = [NSMutableArray new];
     NSMutableArray *sub = [NSMutableArray new];
-    [self binaryTreePathSumHelper:root withTarget:target withSub:sub withResult:result];
+//    [self binaryTreePathSumHelper1:root withTarget:target withSub:sub withResult:result];
+    [self binaryTreePathSumHelper:root withTarget:target curVal:0 withSub:sub withResult:result];
     return [NSArray arrayWithArray:result];
 }
 
 
--(void)binaryTreePathSumHelper:(TreeNode *)root withTarget:(NSInteger) target withSub:(NSMutableArray *)sub withResult:(NSMutableArray *)result
+
+-(void)binaryTreePathSumHelper:(TreeNode *)root withTarget:(NSInteger) target  curVal:(NSInteger)curV withSub:(NSMutableArray *)sub withResult:(NSMutableArray *)result
+{
+    if (!root) {
+        return;
+    }
+    
+    NSInteger val = root.val;
+    [sub addObject:@(root.val)];
+    curV += val;
+    if (curV == target) {
+        [result addObject:[sub copy]];
+    }
+    else if(curV < target)
+    {
+        [self binaryTreePathSumHelper:root.left withTarget:target curVal:curV withSub:[sub mutableCopy] withResult:result];
+        
+        [self binaryTreePathSumHelper:root.right withTarget:target curVal:curV withSub:[sub mutableCopy] withResult:result];
+    }
+}
+
+
+
+//solution more
+-(NSArray *)binaryTreePathSum1:(TreeNode *)root withTarget:(NSInteger) target
+{
+    NSMutableArray *result = [NSMutableArray new];
+    NSMutableArray *sub = [NSMutableArray new];
+    [self binaryTreePathSumHelper1:root withTarget:target withSub:sub withResult:result];
+    return [NSArray arrayWithArray:result];
+}
+
+
+-(void)binaryTreePathSumHelper1:(TreeNode *)root withTarget:(NSInteger) target withSub:(NSMutableArray *)sub withResult:(NSMutableArray *)result
 {
     if (!root)
         return;
@@ -161,8 +238,8 @@
     }
     else if(curValue < target)
     {
-        [self binaryTreePathSumHelper:root.left withTarget:target withSub:[NSMutableArray arrayWithArray:sub] withResult:result]; //!!! 必须新建一个数组，要不然博爱错
-        [self binaryTreePathSumHelper:root.right withTarget:target withSub:[NSMutableArray arrayWithArray:sub] withResult:result];
+        [self binaryTreePathSumHelper1:root.left withTarget:target withSub:[sub mutableCopy] withResult:result]; //!!! 必须新建一个数组，要不然出错
+        [self binaryTreePathSumHelper1:root.right withTarget:target withSub:[sub mutableCopy] withResult:result];
     }
 }
 
@@ -468,20 +545,12 @@ NSInteger (^traverseBlock2)(NSInteger) = ^(NSInteger input) {
     NSInteger mid = length/2;
     
     //left
-    TreeNode *left = nil;
-//    if (mid > 0)
-    {
-        NSRange leftR = NSMakeRange(0, mid);
-        left = [self listToInorderTree:[list subarrayWithRange:leftR]];
-    }
+    NSRange leftR = NSMakeRange(0, mid);// -- [)
+    TreeNode *left = [self listToInorderTree:[list subarrayWithRange:leftR]];
     
     //right
-    TreeNode *right = nil;
-//    if ( mid+1 < length)
-    {
-        NSRange rightR = NSMakeRange(mid+1, length-mid-1);
-        right = [self listToInorderTree:[list subarrayWithRange:rightR]];
-    }
+    NSRange rightR = NSMakeRange(mid+1, length-1-mid);
+    TreeNode *right = [self listToInorderTree:[list subarrayWithRange:rightR]];
     
     TreeNode *root = [[TreeNode alloc] init:[list[mid] integerValue]];
     root.left = left;
@@ -574,16 +643,16 @@ NSInteger (^traverseBlock2)(NSInteger) = ^(NSInteger input) {
 -(TreeNode *)getSampleTree
 {
     TreeNode *root = [[TreeNode alloc] init:5];
-//    TreeNode *left = [[TreeNode alloc] init:3];
-//    TreeNode *right = [[TreeNode alloc] init:7];
-//    TreeNode *leftl = [[TreeNode alloc] init:2];
-//    TreeNode *leftr = [[TreeNode alloc] init:4];
-//    TreeNode *leftll = [[TreeNode alloc] init:1];
-//    root.left = left;
-//    root.right = right;
-//    left.left = leftl;
-//    left.right = leftr;
-//    leftl.left = leftll;
+    TreeNode *left = [[TreeNode alloc] init:3];
+    TreeNode *right = [[TreeNode alloc] init:7];
+    TreeNode *leftl = [[TreeNode alloc] init:2];
+    TreeNode *leftr = [[TreeNode alloc] init:4];
+    TreeNode *leftll = [[TreeNode alloc] init:1];
+    root.left = left;
+    root.right = right;
+    left.left = leftl;
+    left.right = leftr;
+    leftl.left = leftll;
     return root;
 }
 

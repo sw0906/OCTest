@@ -64,11 +64,35 @@
         }
         
         me = [me superview];
+//        [me sub]
     }
     
     return nil;
 }
 
 
+- (UIView *)getTarget2View:(UIView *)rootView1 root2View:(UIView *)root2View  target:(UIView *)target1
+
+{
+    if(rootView1 == target1)
+    {
+        return root2View;
+    }
+    
+    NSArray *arrV1 = [rootView1 subviews];
+    NSArray *arrV2 = [root2View subviews];
+    UIView *t2; //= [self getTarget2View: v1 root2View:v2 target:target1];
+    for(NSInteger i=0; i<arrV1.count; i++)
+    {
+        UIView *v1 = arrV1[i];
+        UIView *v2 = arrV2[i];
+        
+        if([self getTarget2View: v1 root2View:v2 target:target1])
+        {
+            t2 = [self getTarget2View: v1 root2View:v2 target:target1];
+        }
+    }
+    return t2;
+}
 
 @end

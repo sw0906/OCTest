@@ -118,25 +118,25 @@ NS_INLINE CancellationToken *cancellable_dispatch_after111(dispatch_time_t time,
 //@property (weak) BoolNumber *cancelState;
 //@end
 //
-//@implementation SearchViewController
-//{
-//    
-//    - (void) textFieldDidChange: (UITextField *)searchField {
-//        // if we already had a cancelState object for a potentially running query, cancel it
-//        if self.cancelState {
-//            self.cancelSate.boolValue = YES; //~~~~~~~~~~~~~~~~~
-//        }
-//        
-//        // do the work asynchronously in the background
-//        self.cancelState = cancellable_dispatch_after(0, GLOBAL_ASYNC_QUEUE, ^{
-//            self.resultContents = [ServerConn autocompleteSearchField: text];
-//            // once we have results from the server, update the UI on the main thread
-//            dispatch_async(mainQueue, ^{
-//                [self.tableView reloadData];
-//            });
-//        });
-//    }
-//}
+@implementation SearchViewController
+{
+    
+    - (void) textFieldDidChange: (UITextField *)searchField {
+        // if we already had a cancelState object for a potentially running query, cancel it
+        if self.cancelState {
+            self.cancelSate.boolValue = YES; //~~~~~~~~~~~~~~~~~
+        }
+        
+        // do the work asynchronously in the background
+        self.cancelState = cancellable_dispatch_after(0, GLOBAL_ASYNC_QUEUE, ^{
+            self.resultContents = [ServerConn autocompleteSearchField: text];
+            // once we have results from the server, update the UI on the main thread
+            dispatch_async(mainQueue, ^{
+                [self.tableView reloadData];
+            });
+        });
+    }
+}
 
 
 
