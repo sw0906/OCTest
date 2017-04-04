@@ -48,6 +48,28 @@
     BOOL v3 = (su3 == a);
 }
 
+-(UIView *)commonSuperView1:(UIView *)a withOtherView:(UIView *)b
+{
+    NSMutableArray *views = [NSMutableArray new];
+    while( a )
+    {
+        [views addObject:a];
+        a = [a superview];
+    }
+    
+    UIView *me = b;
+    while (me) {
+        if ([views containsObject:me]) {
+            return me;
+        }
+        
+        me = [me superview];
+    }
+    
+    return nil;
+}
+
+
 -(UIView *)commonSuperView:(UIView *)a withOtherView:(UIView *)b
 {
     NSMutableSet *views = [NSMutableSet new];
@@ -94,5 +116,6 @@
     }
     return t2;
 }
+
 
 @end
